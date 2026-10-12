@@ -1,0 +1,560 @@
+{
+  "schemaVersion": "3.0",
+  "id": "week-001",
+  "variance": { "magnitudeBand": [0.5, 1.0] },
+  "threads": ["silicon", "logistics"],
+  "slots": [
+    {
+      "id": "slot-1",
+      "window": [0.32, 0.39],
+      "segments": [
+        { "id": "silicon-crunch", "thread": "silicon", "weight": 3, "debriefPara": "The bottleneck that week was the silicon itself. Switching parts went to forty-week lead times, and the leading-edge fab lines were confirmed booked out for a year — which read bullish and was not, because a fab already running flat out cannot take a single new order. Broadline Devices, named in nothing, makes the switches." },
+        { "id": "dock-backlog", "thread": "logistics", "weight": 2, "debriefPara": "The bottleneck that week was the dock. Customs began opening every electronics container at the largest western gateway, air-cargo rates out of Asia doubled inside a week, and the cost landed on the company that imports finished hardware in boxes. The one that owns cargo jets and not a single ship was the way around it." }
+      ]
+    },
+    {
+      "id": "slot-2",
+      "window": [0.42, 0.80],
+      "segments": [
+        { "id": "freight-squeeze", "thread": "logistics", "weight": 3, "debriefPara": "The freight market moved the same name twice, in opposite directions. Three container ports walked out, which is pricing power for anyone still able to move urgent cargo, and a diesel spike later in the week took a chunk of it straight back. ParcelWorks was helped and then hurt by two visions that had nothing to do with each other." },
+        { "id": "fab-scramble", "thread": "silicon", "weight": 2, "debriefPara": "The supply answer came from inside the industry. A chipmaker a generation behind restarted a mothballed line to take the overflow — spare capacity is only worth something when the first choice has none — and two of the largest cloud buyers said they would design their own accelerators, which is a merchant chip designer watching its customers become its competitors." }
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "companyId": "atlas-cloud",
+      "volatility": 0.009
+    },
+    {
+      "companyId": "helix-compute",
+      "volatility": 0.012
+    },
+    {
+      "companyId": "meridian-chips",
+      "volatility": 0.017
+    },
+    {
+      "companyId": "foundry-one",
+      "volatility": 0.016
+    },
+    {
+      "companyId": "broadline-devices",
+      "volatility": 0.013
+    },
+    {
+      "companyId": "agora-social",
+      "volatility": 0.018
+    },
+    {
+      "companyId": "green-current",
+      "volatility": 0.016
+    },
+    {
+      "companyId": "titan-energy",
+      "volatility": 0.012
+    },
+    {
+      "companyId": "union-aerospace",
+      "volatility": 0.01
+    },
+    {
+      "companyId": "parcelworks",
+      "volatility": 0.013
+    },
+    {
+      "companyId": "orchard",
+      "volatility": 0.011
+    },
+    {
+      "companyId": "redline-motors",
+      "volatility": 0.019
+    }
+  ],
+  "marketEvents": [
+    {
+      "id": "ev-atlas-capex",
+      "eventTime": 0.08,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "A cloud operator will commit to the largest data-center buildout anyone has attempted.",
+      "headlineText": "Atlas Cloud approves record $84bn data-center program, tripling planned capacity over three years.",
+      "affectedCompanies": [
+        {
+          "companyId": "atlas-cloud",
+          "direction": "positive",
+          "magnitude": 0.3,
+          "causalRole": "expectations",
+          "explanation": "The vision points straight at Atlas — but the record budget was near the top of what analysts already modeled, so the buildout was largely priced in: the company doing the spending rises far less than it 'should'. The bigger money was in asking who gets paid when that budget is spent."
+        },
+        {
+          "companyId": "green-current",
+          "direction": "positive",
+          "magnitude": 0.4,
+          "causalRole": "supplier",
+          "explanation": "New data centers need firm power. A renewable producer with contracted capacity can sign premium long-term agreements."
+        },
+        {
+          "companyId": "helix-compute",
+          "direction": "positive",
+          "magnitude": 0.25,
+          "causalRole": "supplier",
+          "incidence": 0.6,
+          "explanation": "Every new site is packed with accelerators — Helix's scarce parts — reinforcing demand for its chips."
+        }
+      ]
+    },
+    {
+      "id": "ev-helix-deal",
+      "eventTime": 0.2,
+      "leadTime": 0.05,
+      "severity": "critical",
+      "reactionProfile": "gradual",
+      "visionText": "The maker of the most sought-after AI accelerators will lock a major cloud buyer into a priority deal.",
+      "headlineText": "Helix Compute signs a multi-year priority-allocation deal with a major cloud operator.",
+      "affectedCompanies": [
+        {
+          "companyId": "helix-compute",
+          "direction": "positive",
+          "magnitude": 0.7,
+          "causalRole": "direct",
+          "explanation": "The vision described the BUYER — a cloud operator locking up allocation — but the value accrued to the seller. A committed, multi-year order book for parts already in short supply hands Helix enormous pricing power. Anyone who bought the cloud operator instead read the sentence and missed the trade."
+        }
+      ]
+    },
+    {
+      "id": "ev-ad-privacy-ruling",
+      "eventTime": 0.27,
+      "leadTime": 0.07,
+      "severity": "critical",
+      "reactionProfile": "immediate",
+      "visionText": "A regulator will ban tracking people across apps and sites without fresh consent.",
+      "headlineText": "Regulator bars cross-app and cross-site user tracking without renewed explicit consent; effective immediately.",
+      "affectedCompanies": [
+        {
+          "companyId": "agora-social",
+          "direction": "negative",
+          "magnitude": 0.7,
+          "causalRole": "direct",
+          "explanation": "Agora's entire ad business is built on following users off-platform. Cut that off and its targeting — and its ad pricing — degrades immediately."
+        },
+        {
+          "companyId": "orchard",
+          "direction": "positive",
+          "magnitude": 0.35,
+          "causalRole": "competitor",
+          "incidence": 0.65,
+          "explanation": "Orchard sells devices, not ads. A privacy crackdown kneecaps its rivals' business model and validates the privacy stance it markets on — a regulation that helps a company it never mentions."
+        }
+      ]
+    },
+    {
+      "id": "ev-networking-backorder",
+      "segment": "silicon-crunch",
+      "eventTime": 0.33,
+      "leadTime": 0.06,
+      "severity": "critical",
+      "reactionProfile": "delayed",
+      "visionText": "Waiting lists for the switching silicon that wires data-center clusters will stretch past 40 weeks.",
+      "headlineText": "Lead times for high-speed data-center networking silicon stretch past 40 weeks as interconnect demand outruns supply.",
+      "affectedCompanies": [
+        {
+          "companyId": "broadline-devices",
+          "direction": "positive",
+          "magnitude": 0.75,
+          "causalRole": "supplier",
+          "explanation": "Broadline makes exactly those back-ordered switches and custom interconnect silicon. Scarcity lets it raise prices — but the vision never says its name, so the move builds late as the market works out who benefits."
+        },
+        {
+          "companyId": "helix-compute",
+          "direction": "positive",
+          "magnitude": 0.1,
+          "causalRole": "sector",
+          "incidence": 0.4,
+          "explanation": "Reinforces the broader accelerator-and-interconnect demand story around Helix."
+        }
+      ]
+    },
+    {
+      "id": "ev-customs-sweep",
+      "segment": "dock-backlog",
+      "eventTime": 0.33,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "Customs will start opening every electronics container at the largest western import gateway.",
+      "headlineText": "Customs orders full physical inspection of all electronics containers at the largest western import gateway.",
+      "affectedCompanies": [
+        {
+          "companyId": "orchard",
+          "direction": "negative",
+          "magnitude": 0.5,
+          "causalRole": "direct",
+          "explanation": "Orchard's finished hardware arrives from Asia in exactly those containers. Every box opened is a box not on a shelf, and the delay lands on the quarter it was meant to sell in."
+        },
+        {
+          "companyId": "parcelworks",
+          "direction": "positive",
+          "magnitude": 0.45,
+          "causalRole": "competitor",
+          "explanation": "When the container lane jams, urgent cargo goes by air. ParcelWorks owns cargo jets and not a single ship, so an inspection order at the docks is not its problem — it is its pricing power."
+        },
+        {
+          "companyId": "broadline-devices",
+          "direction": "negative",
+          "magnitude": 0.3,
+          "causalRole": "supplier",
+          "incidence": 0.6,
+          "explanation": "Broadline ships its switches worldwide by sea. A slower gateway is a slower order book, on a company otherwise having a fine week."
+        }
+      ]
+    },
+    {
+      "id": "ev-foundry-soldout",
+      "segment": "silicon-crunch",
+      "eventTime": 0.38,
+      "leadTime": 0.05,
+      "severity": "major",
+      "reactionProfile": "overreaction",
+      "visionText": "The contract fabricator most advanced chips run through will report every line booked out for a year.",
+      "headlineText": "Foundry One confirms all leading-edge lines are fully booked through next year; no incremental capacity available.",
+      "affectedCompanies": [
+        {
+          "companyId": "foundry-one",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "causalRole": "expectations",
+          "explanation": "TRAP: a sold-out order book reads bullish and the stock spikes — but a fab already running flat out cannot capture any new demand. The upside was priced, and it fades back."
+        },
+        {
+          "companyId": "meridian-chips",
+          "direction": "positive",
+          "magnitude": 0.35,
+          "causalRole": "competitor",
+          "incidence": 0.7,
+          "explanation": "With the top supplier maxed out, operators start looking elsewhere for capacity. The best trade on this vision was in a company the vision doesn't mention."
+        }
+      ]
+    },
+    {
+      "id": "ev-airfreight-rates",
+      "segment": "dock-backlog",
+      "eventTime": 0.38,
+      "leadTime": 0.05,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "Spot rates for air cargo out of Asia will double as shippers abandon the ocean lane.",
+      "headlineText": "Trans-Pacific air-cargo spot rates double in a week as shippers abandon ocean bookings; capacity sold out.",
+      "affectedCompanies": [
+        {
+          "companyId": "parcelworks",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "causalRole": "direct",
+          "explanation": "ParcelWorks is the air lane. Doubled spot rates on sold-out capacity go almost entirely to the operator that already owns the jets."
+        },
+        {
+          "companyId": "orchard",
+          "direction": "negative",
+          "magnitude": 0.35,
+          "causalRole": "customer",
+          "explanation": "Somebody pays the air premium, and it is the importer with hardware stuck the slow way. The same company the docks were already holding up now pays double to go around them."
+        },
+        {
+          "companyId": "titan-energy",
+          "direction": "positive",
+          "magnitude": 0.3,
+          "causalRole": "supplier",
+          "incidence": 0.6,
+          "explanation": "A freight surge that moves by air is a jet-fuel order. Titan refines it."
+        }
+      ]
+    },
+    {
+      "id": "ev-port-strike",
+      "segment": "freight-squeeze",
+      "eventTime": 0.44,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "Dockworkers will walk out at three of the largest container ports on the west coast, with no return date set.",
+      "headlineText": "Dockworkers walk out at three major western-seaboard container ports; no return date set, vessels diverting.",
+      "affectedCompanies": [
+        {
+          "companyId": "parcelworks",
+          "direction": "positive",
+          "magnitude": 0.6,
+          "causalRole": "competitor",
+          "explanation": "Counter-intuitive but reliable: when the ocean lane closes, urgent cargo reroutes to whoever can still move it. ParcelWorks owns cargo jets and van fleets and not a single ship — a port shutdown isn't its problem, it's its pricing power."
+        },
+        {
+          "companyId": "orchard",
+          "direction": "negative",
+          "magnitude": 0.55,
+          "causalRole": "supplier",
+          "explanation": "Orchard's finished hardware arrives in containers through exactly those ports. It gave back most of the gain it had just made on the privacy ruling — the same stock, moved twice, in opposite directions, for unrelated reasons."
+        },
+        {
+          "companyId": "broadline-devices",
+          "direction": "negative",
+          "magnitude": 0.15,
+          "causalRole": "supplier",
+          "incidence": 0.5,
+          "explanation": "A modest shipping drag on a company otherwise having an excellent week."
+        }
+      ]
+    },
+    {
+      "id": "ev-line-restart",
+      "segment": "fab-scramble",
+      "eventTime": 0.44,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "A chipmaker a generation behind the leaders will restart a mothballed line to take overflow orders.",
+      "headlineText": "Meridian Chips restarts a mothballed fab line to absorb overflow orders from sold-out leading-edge suppliers.",
+      "affectedCompanies": [
+        {
+          "companyId": "meridian-chips",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "causalRole": "direct",
+          "explanation": "Meridian's spare capacity and catalogue of good-enough parts are worth nothing in a normal week and a great deal in this one. It is the only listed name a generation behind the leaders."
+        },
+        {
+          "companyId": "foundry-one",
+          "direction": "negative",
+          "magnitude": 0.2,
+          "causalRole": "competitor",
+          "incidence": 0.6,
+          "explanation": "Overflow orders that find a second home are orders the queue no longer has to wait for. It trims the scarcity premium under the contract fabricator."
+        }
+      ]
+    },
+    {
+      "id": "ev-power-costs",
+      "eventTime": 0.5,
+      "leadTime": 0.42,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "Wholesale electricity will spike on every grid as data-center demand collides with firming fuel costs.",
+      "headlineText": "Wholesale power prices spike across all regional grids as data-center load strains capacity and fuel costs firm.",
+      "affectedCompanies": [
+        {
+          "companyId": "green-current",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "causalRole": "direct",
+          "explanation": "A producer with power to sell into a tightening market can lock in premium long-term contracts."
+        },
+        {
+          "companyId": "titan-energy",
+          "direction": "positive",
+          "magnitude": 0.45,
+          "causalRole": "macro",
+          "incidence": 0.75,
+          "explanation": "Firmer fuel and power prices lift an integrated energy producer across its whole book."
+        },
+        {
+          "companyId": "atlas-cloud",
+          "direction": "negative",
+          "magnitude": 0.2,
+          "causalRole": "customer",
+          "explanation": "Power is the largest running cost of a data center. The same buildout that made Atlas look like the week's winner is what makes an energy squeeze land on its margins."
+        },
+        {
+          "companyId": "redline-motors",
+          "direction": "negative",
+          "magnitude": 0.15,
+          "causalRole": "macro",
+          "incidence": 0.5,
+          "explanation": "Expensive electricity raises the cost of running a battery gigafactory and slightly dulls the economics of the EV pitch."
+        }
+      ]
+    },
+    {
+      "id": "ev-battery-metals",
+      "eventTime": 0.58,
+      "leadTime": 0.45,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "An export ministry will impose emergency quotas on the refined lithium and cobalt in battery cathodes.",
+      "headlineText": "Export ministry imposes emergency quotas on refined lithium and cobalt shipments; cathode metal prices surge.",
+      "affectedCompanies": [
+        {
+          "companyId": "redline-motors",
+          "direction": "negative",
+          "magnitude": 0.7,
+          "causalRole": "supplier",
+          "explanation": "Redline's whole cost structure is the battery pack. Quotas on refined cathode metals hit it harder than any other name in the market."
+        }
+      ]
+    },
+    {
+      "id": "ev-transformer-shortage",
+      "eventTime": 0.64,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "delayed",
+      "visionText": "A grid-transformer shortage will push new power connections back by months, even ones under contract.",
+      "headlineText": "Grid transformer shortage pushes new power hookups out by months, stranding contracted data-center capacity.",
+      "affectedCompanies": [
+        {
+          "companyId": "green-current",
+          "direction": "positive",
+          "magnitude": 0.5,
+          "causalRole": "sector",
+          "explanation": "Scarcer grid capacity makes already-contracted, deliverable power dramatically more valuable."
+        },
+        {
+          "companyId": "titan-energy",
+          "direction": "positive",
+          "magnitude": 0.2,
+          "causalRole": "sector",
+          "incidence": 0.5,
+          "explanation": "Adds to the theme of tight, expensive energy across the board."
+        },
+        {
+          "companyId": "atlas-cloud",
+          "direction": "negative",
+          "magnitude": 0.35,
+          "causalRole": "customer",
+          "explanation": "A data center that cannot be energized cannot be rented. This is what turned Atlas's record capex from a promise into a delay, and dragged the week's most obvious 'AI winner' to a negative finish."
+        }
+      ]
+    },
+    {
+      "id": "ev-supplier-diversify",
+      "eventTime": 0.7,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "Data-center buyers will begin qualifying second-source chip suppliers to protect their build schedules.",
+      "headlineText": "Data-center operators begin qualifying second-tier chip suppliers to protect buildout schedules.",
+      "affectedCompanies": [
+        {
+          "companyId": "meridian-chips",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "causalRole": "competitor",
+          "explanation": "Meridian is the classic second source. In a supply-starved market it wins incremental orders it would never see when top-tier parts are plentiful."
+        }
+      ]
+    },
+    {
+      "id": "ev-fuel-spike",
+      "segment": "freight-squeeze",
+      "eventTime": 0.78,
+      "leadTime": 0.28,
+      "severity": "major",
+      "reactionProfile": "delayed",
+      "visionText": "A supply disruption will send diesel sharply higher into the weekend.",
+      "headlineText": "Supply disruption drives diesel sharply higher into the weekend; freight surcharges follow.",
+      "affectedCompanies": [
+        {
+          "companyId": "parcelworks",
+          "direction": "negative",
+          "magnitude": 0.4,
+          "causalRole": "direct",
+          "explanation": "Diesel is the other half of the story. The freight operator that spiked on the port strike hands a chunk of it back — the same company, helped and then hurt, by two visions with nothing to do with each other."
+        },
+        {
+          "companyId": "titan-energy",
+          "direction": "positive",
+          "magnitude": 0.25,
+          "causalRole": "macro",
+          "incidence": 0.7,
+          "explanation": "The disruption that hurts every fuel buyer is a windfall for the integrated producer selling it."
+        }
+      ]
+    },
+    {
+      "id": "ev-inhouse-silicon",
+      "segment": "fab-scramble",
+      "eventTime": 0.78,
+      "leadTime": 0.28,
+      "severity": "major",
+      "reactionProfile": "delayed",
+      "visionText": "Two of the largest cloud buyers will start designing their own accelerators in-house.",
+      "headlineText": "Two of the largest cloud operators confirm in-house accelerator programs; first silicon already taped out.",
+      "affectedCompanies": [
+        {
+          "companyId": "helix-compute",
+          "direction": "negative",
+          "magnitude": 0.5,
+          "causalRole": "customer",
+          "explanation": "Helix sells the accelerators every data center is fighting over — to the same handful of buyers now designing their own. The customer list and the future competitor list turn out to be one list."
+        },
+        {
+          "companyId": "foundry-one",
+          "direction": "positive",
+          "magnitude": 0.3,
+          "causalRole": "customer",
+          "incidence": 0.7,
+          "explanation": "Designing a chip is not building one. Whoever draws the accelerator still has to queue at a contract fab, and there is one queue that matters."
+        },
+        {
+          "companyId": "atlas-cloud",
+          "direction": "neutral",
+          "magnitude": 0.2,
+          "causalRole": "expectations",
+          "explanation": "TRAP: the vision points at the cloud operators, and cheaper silicon sounds like the saving Atlas needs. Taping out a part is years from a data center full of them — the market priced it at nothing, and it was right."
+        }
+      ]
+    },
+    {
+      "id": "ev-foundry-strike",
+      "eventTime": 0.9,
+      "leadTime": 0.45,
+      "severity": "critical",
+      "reactionProfile": "immediate",
+      "visionText": "The advanced fab the whole industry queues for will be hit in an overnight strike and go dark.",
+      "headlineText": "Foundry One's primary fab struck in an overnight military attack; production halted indefinitely.",
+      "affectedCompanies": [
+        {
+          "companyId": "foundry-one",
+          "direction": "negative",
+          "magnitude": 0.8,
+          "causalRole": "direct",
+          "explanation": "Which fab? The cast sheet says plainly that one company's few leading-edge lines are the ones the advanced industry queues for. A catastrophic hit to its only advanced-node capacity, and the worst finish on the board."
+        },
+        {
+          "companyId": "meridian-chips",
+          "direction": "positive",
+          "magnitude": 0.35,
+          "causalRole": "competitor",
+          "explanation": "With Foundry offline, every urgent order in the industry has to go somewhere. The late shock cements Meridian as one of the week's biggest winners — and it was never named in a single vision."
+        },
+        {
+          "companyId": "helix-compute",
+          "direction": "negative",
+          "magnitude": 0.2,
+          "causalRole": "supplier",
+          "incidence": 0.6,
+          "explanation": "The market sheet said it plainly: Helix is fabless — its chips are built by outside contract fabs. When the biggest one goes dark, some of those chips are Helix's, and the outage trims a slice off its strong week."
+        },
+        {
+          "companyId": "broadline-devices",
+          "direction": "positive",
+          "magnitude": 0.25,
+          "causalRole": "sector",
+          "thread": "silicon",
+          "explanation": "In a week already defined by silicon scarcity, a fab going dark is one more thing nobody can get. Every buyer who had been slow-walking an interconnect order stopped slow-walking it."
+        },
+        {
+          "companyId": "parcelworks",
+          "direction": "positive",
+          "magnitude": 0.35,
+          "causalRole": "customer",
+          "thread": "logistics",
+          "explanation": "In a week already defined by a jammed physical lane, a fab going dark makes every remaining wafer an air-freight problem. The same operator the whole week had been about got the last of it too."
+        }
+      ]
+    }
+  ],
+  "debrief": {
+    "opening": "The week's engine was a wave of AI data-center spending, and almost none of the money ended up where the headlines pointed. Atlas Cloud announced the largest capex budget in its history and then spent the week paying for it: the power costs and the grid delays its own buildout created landed on its own margins. The value went to the scarce inputs instead — Helix's accelerators, Green Current's contracted electricity.",
+    "closing": "The last vision of the week put the advanced fab in the dark, and Foundry One, the one name the whole industry queues for, went with it. Meridian Chips — a generation behind, never named in a single vision — was standing right next to it. Elsewhere the market ignored the plot entirely: a privacy ruling crushed the ad-funded social network, and an export quota on battery metals made the EV champion a sell."
+  }
+}

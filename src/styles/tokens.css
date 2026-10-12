@@ -1,0 +1,85 @@
+/* Design tokens (design doc section 11.4).
+ *
+ * Every color, space, radius, and type choice is a CSS variable so the whole
+ * look can be re-skinned without touching component code.
+ *
+ * ART DIRECTION: "retro-futurist trading terminal" — deep navy glass in a tan
+ * frame. The key rule that keeps it from going brown: TAN IS A LINE COLOR, NOT
+ * A FILL. It appears as hairlines, rules, bezel edges and label text; the large
+ * surfaces underneath stay navy. Filling a header or dock with tan turns the
+ * whole screen sepia, which is the opposite of the intended look.
+ *
+ * Dark mode only: the conceit is a lit screen in a dim room.
+ */
+
+:root {
+  /* --- the cabinet (tan hardware — edges and labels only) --- */
+  --tan: #d5c49c;
+  --tan-lit: #f2e8ce;
+  --tan-dim: #9b8c66;
+  --tan-deep: #4c452f;
+  /* The one place tan becomes a surface: a thin machined edge. Kept dark enough
+     that it reads as a lit bevel rather than a slab of brass. */
+  --bezel: linear-gradient(180deg, #1b3540, #102630 60%, #0b1d25);
+
+  /* --- the glass (screen surfaces) — navy with a faint teal cast --- */
+  --bg: #071219;
+  --surface: #0c1e27;
+  --surface-2: #123039;
+  --surface-3: #08181f;
+
+  /* --- phosphor (text) --- */
+  --text: #ece2c8;
+  --muted: #8ba2ab;
+  --dim: #5d757e;
+
+  /* --- rules --- */
+  --border: #1d3b46;
+  --border-strong: #34606e;
+
+  /* --- signal colors --- */
+  --positive: #6fd98a;
+  --positive-soft: rgba(111, 217, 138, 0.14);
+  --negative: #ef5b45;
+  --negative-soft: rgba(239, 91, 69, 0.16);
+  --accent: #4fd6c1; /* phosphor cyan — selection, live state */
+  --accent-2: #2aa595;
+  --accent-soft: rgba(79, 214, 193, 0.16);
+  --accent-ink: #04211d;
+  --gold: #edc158; /* amber — reserved for equity and "major"; use sparingly */
+  --gold-soft: rgba(237, 193, 88, 0.16);
+  --hot: #ff7a4d; /* imminent / alarm */
+
+  /* --- glow (the electron gun) --- */
+  --glow-accent: 0 0 8px rgba(79, 214, 193, 0.45);
+  --glow-gold: 0 0 10px rgba(237, 193, 88, 0.35);
+  --glow-hot: 0 0 10px rgba(255, 122, 77, 0.5);
+
+  /* typography — wide/condensed display caps over a neutral UI face, with
+     everything numeric in mono. */
+  --font-sans: "Avenir Next", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Avenir Next Condensed", "Bahnschrift", "DIN Alternate", "Arial Narrow", var(--font-sans);
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
+
+  /* spacing scale */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+
+  /* radii + borders + shadow. Outer housings are generously rounded (moulded
+     plastic/metal); inner readouts are near-square (cut glass). */
+  --radius: 10px;
+  --radius-sm: 4px;
+  --radius-lg: 16px;
+  --shadow-1: 0 2px 0 rgba(0, 0, 0, 0.5), 0 6px 22px rgba(0, 0, 0, 0.45);
+  --shadow-2: 0 12px 40px rgba(0, 0, 0, 0.6);
+  /* the recessed-screen look: dark inner vignette + a hairline highlight */
+  --inset-screen: inset 0 0 0 1px rgba(0, 0, 0, 0.55), inset 0 0 44px rgba(0, 0, 0, 0.42);
+
+  /* semantic sizes */
+  --header-h: 58px;
+}

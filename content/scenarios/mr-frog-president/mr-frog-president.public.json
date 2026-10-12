@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "3.0",
+  "id": "mr-frog-president",
+  "title": "Mr. Frog Becomes President",
+  "description": "The nation's most famous amphibian runs for the highest office. The scandal trades easy — the forgiveness is where the money is.",
+  "seed": 4242,
+  "startingCash": 100000,
+  "durationSeconds": 600,
+  "companies": [
+    {
+      "companyId": "frog-network",
+      "name": "The Frog Network",
+      "sector": "Broadcasting",
+      "description": "Airs one program: a 40-season amphibian variety show. Ad-funded; no other hits; the backup schedule is a fireplace.",
+      "openingPrice": 74.0
+    },
+    {
+      "companyId": "smiling-friends-inc",
+      "name": "Smiling Friends Inc.",
+      "sector": "Services",
+      "description": "Two-man cheer-up charity paid per smile; takes any client, however hopeless. One office, one intern, no second location.",
+      "openingPrice": 12.0
+    },
+    {
+      "companyId": "frowning-friends",
+      "name": "Frowning Friends Corp.",
+      "sector": "Services",
+      "description": "Corporate misery-management giant; sells attack ads, layoff announcements and bad news delivered in gray suits.",
+      "openingPrice": 45.0
+    },
+    {
+      "companyId": "daily-gawk",
+      "name": "The Daily Gawk",
+      "sector": "Media",
+      "description": "Celebrity tabloid; circulation doubles on scandal and halves on forgiveness. Photographers famous for getting too close.",
+      "openingPrice": 22.0
+    },
+    {
+      "companyId": "goodstead",
+      "name": "Goodstead Casualty",
+      "sector": "Insurance",
+      "description": "Underwrites live-broadcast liability, including every presidential debate; premiums tiny, payouts biblical.",
+      "openingPrice": 88.0
+    },
+    {
+      "companyId": "tallyright",
+      "name": "TallyRight Systems",
+      "sector": "Technology",
+      "description": "Builds and services every voting machine in the country; paid per ballot counted, recounts billed at double rate.",
+      "openingPrice": 54.0
+    },
+    {
+      "companyId": "pockets-pals",
+      "name": "Pockets & Pals Toys",
+      "sector": "Consumer",
+      "description": "Plush-toy maker; pays steep royalties for exclusive likeness rights to whatever face the nation loves this year.",
+      "openingPrice": 27.0
+    },
+    {
+      "companyId": "gravitas",
+      "name": "Gravitas News",
+      "sector": "Media",
+      "description": "Cable news channel of record; its chief anchor Ted Baxley moderates every presidential debate by tradition.",
+      "openingPrice": 61.0
+    },
+    {
+      "companyId": "bulwark",
+      "name": "Bulwark Coachworks",
+      "sector": "Industrials",
+      "description": "Hand-builds armored state limousines; every incoming administration orders a custom fleet. Also does amphibious hulls.",
+      "openingPrice": 96.0
+    },
+    {
+      "companyId": "spit-records",
+      "name": "Spit Records",
+      "sector": "Entertainment",
+      "description": "Label and touring arm of the world's loudest DJ; owns his catalog, his residency, and one very large speaker.",
+      "openingPrice": 40.0
+    },
+    {
+      "companyId": "saltys",
+      "name": "Salty's Pizza",
+      "sector": "Restaurants",
+      "description": "Nine hundred boardwalk pizza stands; the founder was violently murdered years ago, case open, recipe in escrow.",
+      "openingPrice": 29.0
+    },
+    {
+      "companyId": "bliblie-springs",
+      "name": "Bliblie Springs Water",
+      "sector": "Consumer",
+      "description": "Bottles spring water from a valley of small yellow creatures; the creatures are unbothered and feature on the label.",
+      "openingPrice": 15.0
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-07-22",
+    "promptVersion": "handauthored-8",
+    "author": "claude",
+    "reviewed": false,
+    "tags": [
+      "smiling-friends",
+      "election",
+      "mr-frog",
+      "themed-universe"
+    ]
+  }
+}

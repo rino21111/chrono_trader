@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chrono Trader — Tests</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; color: #1f2328; background: #f4f1e8; }
+    h1 { font-size: 20px; }
+    #summary { font-size: 18px; font-weight: 700; margin: 12px 0; }
+    .ok { color: #237a4b; }
+    .fail { color: #a43c35; }
+    .suite { font-weight: 700; margin: 16px 0 4px; }
+    .case { margin-left: 16px; font-size: 14px; }
+    .err { margin-left: 32px; color: #a43c35; font-family: ui-monospace, monospace; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Chrono Trader — Unit &amp; Integration Tests</h1>
+  <div id="summary">running…</div>
+  <div id="results"></div>
+
+  <script type="module">
+    import { run } from "./harness.js";
+    // Importing a test module registers its describe/it blocks.
+    await import("./rng.test.js");
+    await import("./pricingModel.test.js");
+    await import("./marketEngine.test.js");
+    await import("./executionEngine.test.js");
+    await import("./portfolio.test.js");
+    await import("./scoreGame.test.js");
+    await import("./visions.test.js");
+    await import("./gameClock.test.js");
+    await import("./gameStore.test.js");
+    await import("./calendar.test.js");
+    await import("./scenario.test.js");
+    await import("./variance.test.js");
+
+    const summary = document.getElementById("summary");
+    const results = document.getElementById("results");
+    const s = await run();
+    summary.textContent = `${s.passed}/${s.total} passed` + (s.failed ? ` · ${s.failed} FAILED` : " · all green");
+    summary.className = s.failed ? "fail" : "ok";
+
+    let currentSuite = null;
+    for (const r of s.results) {
+      if (r.suite !== currentSuite) {
+        currentSuite = r.suite;
+        const h = document.createElement("div");
+        h.className = "suite";
+        h.textContent = r.suite;
+        results.appendChild(h);
+      }
+      const line = document.createElement("div");
+      line.className = "case " + (r.ok ? "ok" : "fail");
+      line.textContent = (r.ok ? "✓ " : "✗ ") + r.name;
+      results.appendChild(line);
+      if (!r.ok) {
+        const e = document.createElement("div");
+        e.className = "err";
+        e.textContent = r.error;
+        results.appendChild(e);
+      }
+    }
+    // Expose for automated checking.
+    window.__testSummary = s;
+  </script>
+</body>
+</html>

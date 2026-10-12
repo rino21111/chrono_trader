@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "3.0",
+  "id": "mormons-go-nuclear",
+  "title": "Mormons Go Nuclear",
+  "description": "Deseret goes atomic with a fleet of desert reactors. Ask why. The faithful are prepared — the market only thinks it is.",
+  "seed": 1847,
+  "startingCash": 100000,
+  "durationSeconds": 600,
+  "companies": [
+    {
+      "companyId": "beehive-atomics",
+      "name": "Beehive Atomics",
+      "sector": "Energy",
+      "description": "Factory-builds truckable sealed reactors; its planned west-desert fleet is water-cooled, and the faith's endowment wrote its founding check.",
+      "openingPrice": 62.0
+    },
+    {
+      "companyId": "perpetual-reserve",
+      "name": "Perpetual Reserve Trust",
+      "sector": "Finance",
+      "description": "The faith's investment arm: a famously quiet endowment holding founding stakes across the corridor's industry, and more cash than it has ever disclosed.",
+      "openingPrice": 210.0
+    },
+    {
+      "companyId": "promised-valley-ranches",
+      "name": "Promised Valley Ranches",
+      "sector": "Agriculture",
+      "description": "Cuts alfalfa and runs cattle on the faith's old welfare ranches in the west desert, on water rights filed by the first settlers — the basin's most senior.",
+      "openingPrice": 34.0
+    },
+    {
+      "companyId": "years-supply",
+      "name": "Year's Supply Co.",
+      "sector": "Preparedness",
+      "description": "Sells freeze-dried pantries, water barrels, crank radios and iodine tablets by catalog and warehouse store to households keeping a year of reserves.",
+      "openingPrice": 27.0
+    },
+    {
+      "companyId": "everbloom-botanicals",
+      "name": "Everbloom Botanicals",
+      "sector": "Wellness",
+      "description": "Blends essential oils and herbal drops sold entirely through a downline of independent home distributors, each of whom recruits the next.",
+      "openingPrice": 19.0
+    },
+    {
+      "companyId": "bonneville-concrete",
+      "name": "Bonneville Concrete & Grade",
+      "sector": "Construction",
+      "description": "Pours ready-mix from its own gravel pits and has graded half the corridor's highways, dams and chapel lots — though never once built to a nuclear spec.",
+      "openingPrice": 71.0
+    },
+    {
+      "companyId": "red-mesa-milling",
+      "name": "Red Mesa Milling",
+      "sector": "Mining",
+      "description": "Runs the country's last licensed uranium mill on a remote desert mesa, buying ore from mothballed canyon mines and stockpiling yellowcake.",
+      "openingPrice": 23.0
+    },
+    {
+      "companyId": "intermountain-light-coal",
+      "name": "Intermountain Light & Coal",
+      "sector": "Utilities",
+      "description": "The incumbent utility: aging coal units and gas peakers selling firm power to the valley and, under long contract, to cities out of state.",
+      "openingPrice": 96.0
+    },
+    {
+      "companyId": "alpine-rack-compute",
+      "name": "Alpine Rack & Compute",
+      "sector": "Technology",
+      "description": "Builds server halls along the tech corridor for out-of-state clouds; has land and permits banked, and waits years in the grid queue for every megawatt.",
+      "openingPrice": 118.0
+    },
+    {
+      "companyId": "saltair-minerals",
+      "name": "Saltair Minerals",
+      "sector": "Materials",
+      "description": "Harvests magnesium and lithium from evaporation ponds on the shrinking salt lake; the basin's single largest buyer of electricity.",
+      "openingPrice": 57.0
+    },
+    {
+      "companyId": "glory-dome",
+      "name": "Glory Dome Ministries",
+      "sector": "Broadcasting",
+      "description": "Prosperity-gospel broadcaster beaming nightly from a chrome mega-dome to nine million believers; pledge drives are the whole income statement.",
+      "openingPrice": 84.0
+    },
+    {
+      "companyId": "called-and-ready",
+      "name": "Called & Ready Outfitters",
+      "sector": "Retail",
+      "description": "Fits departing nineteen-year-old missionaries with two years of suits, bicycles and luggage from storefronts beside every training center.",
+      "openingPrice": 16.0
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-07-21",
+    "promptVersion": "handauthored-8",
+    "author": "claude",
+    "reviewed": false,
+    "tags": [
+      "deseret",
+      "nuclear-buildout",
+      "secession",
+      "faith-economy",
+      "themed-universe"
+    ]
+  }
+}

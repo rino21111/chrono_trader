@@ -1,0 +1,354 @@
+{
+  "schemaVersion": "3.0",
+  "id": "mr-frog-president",
+  "variance": { "magnitudeBand": [0.5, 1.0] },
+  "companies": [
+    { "companyId": "frog-network", "volatility": 0.018 },
+    { "companyId": "smiling-friends-inc", "volatility": 0.016 },
+    { "companyId": "frowning-friends", "volatility": 0.012 },
+    { "companyId": "daily-gawk", "volatility": 0.017 },
+    { "companyId": "goodstead", "volatility": 0.007 },
+    { "companyId": "tallyright", "volatility": 0.012 },
+    { "companyId": "pockets-pals", "volatility": 0.015 },
+    { "companyId": "gravitas", "volatility": 0.011 },
+    { "companyId": "bulwark", "volatility": 0.008 },
+    { "companyId": "spit-records", "volatility": 0.019 },
+    { "companyId": "saltys", "volatility": 0.012 },
+    { "companyId": "bliblie-springs", "volatility": 0.013 }
+  ],
+  "marketEvents": [
+    {
+      "id": "ev-the-announcement",
+      "eventTime": 0.07,
+      "leadTime": 0.05,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "The nation's most famous amphibian will close his show by announcing a run for the highest office.",
+      "headlineText": "Mr. Frog declares for president live on his own show; the desk does not survive the announcement. Ratings: historic.",
+      "affectedCompanies": [
+        {
+          "companyId": "frog-network",
+          "direction": "positive",
+          "magnitude": 0.5,
+          "causalRole": "direct",
+          "explanation": "The network airs exactly one program, and its host just became the biggest story in the country. The tape bought the ratings without reading the broadcast rulebook."
+        },
+        {
+          "companyId": "gravitas",
+          "direction": "positive",
+          "magnitude": 0.2,
+          "causalRole": "sector",
+          "explanation": "An election cycle is the channel of record's harvest season. First, gentle leg of a very bumpy week."
+        }
+      ]
+    },
+    {
+      "id": "ev-equal-time",
+      "eventTime": 0.13,
+      "leadTime": 0.05,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "Broadcast rules will force the candidate's home network to pull his show for the length of the race.",
+      "headlineText": "Equal-time rule pulls The Mr. Frog Show for the campaign's duration; the network schedule is now the fireplace.",
+      "affectedCompanies": [
+        {
+          "companyId": "frog-network",
+          "direction": "negative",
+          "magnitude": 0.55,
+          "causalRole": "direct",
+          "explanation": "One program, suspended, equals no programs. The announcement premium came off in an afternoon — the cast sheet had said 'no other hits,' and the fireplace does not sell ads."
+        },
+        {
+          "companyId": "gravitas",
+          "direction": "positive",
+          "magnitude": 0.25,
+          "causalRole": "competitor",
+          "explanation": "With the variety show dark, news coverage became the only televised way to watch the candidate. The channel of record collected the audience by default."
+        },
+        {
+          "companyId": "daily-gawk",
+          "direction": "positive",
+          "magnitude": 0.15,
+          "causalRole": "competitor",
+          "explanation": "What television can't air, a tabloid can print. Candidate coverage moved to whoever could still get a photographer too close."
+        }
+      ]
+    },
+    {
+      "id": "ev-campaign-staff",
+      "eventTime": 0.19,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "A campaign with no staff will hand its entire operation to the country's smallest cheer-up firm.",
+      "headlineText": "Frog campaign hires Smiling Friends Inc. as manager, strategist and bus driver; headquarters remains one room.",
+      "affectedCompanies": [
+        {
+          "companyId": "smiling-friends-inc",
+          "direction": "positive",
+          "magnitude": 0.6,
+          "causalRole": "direct",
+          "explanation": "A two-man charity paid per smile just signed a client with a hundred million faces to cheer. Smallest company on the board, biggest contract in its history."
+        },
+        {
+          "companyId": "frowning-friends",
+          "direction": "negative",
+          "magnitude": 0.25,
+          "causalRole": "competitor",
+          "explanation": "The giant of the mood industry was passed over for two men and an intern. The gray suits took it personally, then took a different client."
+        }
+      ]
+    },
+    {
+      "id": "ev-the-debate",
+      "eventTime": 0.25,
+      "leadTime": 0.06,
+      "severity": "critical",
+      "reactionProfile": "immediate",
+      "visionText": "At the first debate, the moderator will stand within tongue's reach of the candidate and not be seen again.",
+      "headlineText": "Mr. Frog eats debate moderator live on air; Gravitas anchor Ted Baxley presumed swallowed. Polls: pending.",
+      "affectedCompanies": [
+        {
+          "companyId": "gravitas",
+          "direction": "negative",
+          "magnitude": 0.5,
+          "causalRole": "direct",
+          "explanation": "The cast sheet said Baxley moderates every debate by tradition; the vision said the moderator wouldn't be seen again. The channel of record lost its face on its own feed."
+        },
+        {
+          "companyId": "goodstead",
+          "direction": "negative",
+          "magnitude": 0.45,
+          "causalRole": "direct",
+          "explanation": "It underwrites live-broadcast liability including every presidential debate, and a man was just swallowed on one. Premiums tiny, payouts biblical — the sheet warned you in six words."
+        },
+        {
+          "companyId": "daily-gawk",
+          "direction": "positive",
+          "magnitude": 0.3,
+          "causalRole": "sector",
+          "explanation": "TRAP, first half: circulation doubles on scandal, and this was the scandal of the decade. The same sentence on the cast sheet said what forgiveness does to it."
+        },
+        {
+          "companyId": "smiling-friends-inc",
+          "direction": "negative",
+          "magnitude": 0.2,
+          "causalRole": "macro",
+          "explanation": "The campaign they run top to bottom now stars a candidate who ate a man. Briefly, the smile business looked hard."
+        }
+      ]
+    },
+    {
+      "id": "ev-attack-budget",
+      "eventTime": 0.31,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "overreaction",
+      "visionText": "The front-runner will hand every attack ad to the country's largest professional frowning firm.",
+      "headlineText": "Frowning Friends Corp. takes the Hobbs campaign's full $200M attack budget. Mood at the announcement: appropriate.",
+      "affectedCompanies": [
+        {
+          "companyId": "frowning-friends",
+          "direction": "positive",
+          "magnitude": 0.45,
+          "causalRole": "direct",
+          "explanation": "TRAP, first half: a $200M budget is real revenue, and an overreacting tape priced the contract as if the ads were guaranteed to work. The ads still had to air."
+        }
+      ]
+    },
+    {
+      "id": "ev-the-apology",
+      "eventTime": 0.36,
+      "leadTime": 0.05,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "The swallowed man will come back up whole, on the candidate's own apology broadcast.",
+      "headlineText": "Ted Baxley regurgitated alive on the apology special, 'mostly dry'; he forgives Mr. Frog before the ad break.",
+      "affectedCompanies": [
+        {
+          "companyId": "gravitas",
+          "direction": "positive",
+          "magnitude": 0.35,
+          "causalRole": "direct",
+          "explanation": "The anchor came back damp but alive, with the exclusive first interview being himself. Most of the panic unwound; the tradition of moderating survives, with a longer podium."
+        },
+        {
+          "companyId": "goodstead",
+          "direction": "positive",
+          "magnitude": 0.4,
+          "causalRole": "direct",
+          "explanation": "No fatality, no payout: the swallowing claim was voided by regurgitation, a clause nobody had ever needed. The insurer clawed back most of the debate-night hit."
+        },
+        {
+          "companyId": "daily-gawk",
+          "direction": "negative",
+          "magnitude": 0.6,
+          "causalRole": "expectations",
+          "explanation": "TRAP, second half: forgiveness arrived before the ad break, and the cast sheet said exactly what forgiveness does to circulation. It halves it. The scandal economy closed early."
+        },
+        {
+          "companyId": "smiling-friends-inc",
+          "direction": "positive",
+          "magnitude": 0.3,
+          "causalRole": "direct",
+          "explanation": "The apology special was their production, and it worked in one broadcast. Cheering up a nation turns out to be billable."
+        }
+      ]
+    },
+    {
+      "id": "ev-plush-license",
+      "eventTime": 0.47,
+      "leadTime": 0.4,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "The maker of pocket-sized plush will win the candidate's face, exclusively.",
+      "headlineText": "Pockets & Pals lands exclusive Frog likeness rights for $80M; plush ships in 'presidential' and 'regular' sizes.",
+      "affectedCompanies": [
+        {
+          "companyId": "pockets-pals",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "magnitudeBand": [1, 1],
+          "causalRole": "direct",
+          "explanation": "TRAP, first half: an exclusive license to the most beloved face in the country, paid for with steep royalties. The word doing all the work in that sentence was 'exclusive.'"
+        }
+      ]
+    },
+    {
+      "id": "ev-ad-backfire",
+      "eventTime": 0.53,
+      "leadTime": 0.45,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "The gloomy firm's biggest broadcast will move the polls the wrong way for the man who paid for it.",
+      "headlineText": "Hobbs ad 'He Ate a Man' airs 40,000 times; Frog gains nine points. Focus groups call it 'an awesome highlight reel.'",
+      "affectedCompanies": [
+        {
+          "companyId": "frowning-friends",
+          "direction": "negative",
+          "magnitude": 0.55,
+          "causalRole": "direct",
+          "explanation": "TRAP, second half: the attack ad was a highlight reel. $200M of misery management made the frog nine points more lovable, and the client asked for his money back in writing."
+        },
+        {
+          "companyId": "smiling-friends-inc",
+          "direction": "positive",
+          "magnitude": 0.15,
+          "causalRole": "competitor",
+          "explanation": "Their opposition just spent $200M proving the product. The smile firm's candidate rose without them buying a single spot."
+        }
+      ]
+    },
+    {
+      "id": "ev-election-night",
+      "eventTime": 0.59,
+      "leadTime": 0.06,
+      "severity": "critical",
+      "reactionProfile": "volatile",
+      "visionText": "On election night every machine will report one name — including the ballots left blank.",
+      "headlineText": "TallyRight machines report 100% Frog nationwide, blank ballots included; certification frozen, machines impounded.",
+      "affectedCompanies": [
+        {
+          "companyId": "tallyright",
+          "direction": "negative",
+          "magnitude": 0.4,
+          "causalRole": "direct",
+          "explanation": "A machine that finds a vote on a blank ballot looks like a broken machine. Every unit in the country impounded, certification frozen — the market priced a scandal."
+        },
+        {
+          "companyId": "gravitas",
+          "direction": "positive",
+          "magnitude": 0.3,
+          "causalRole": "sector",
+          "explanation": "A frozen election is a news channel's Christmas. Baxley anchored 31 straight hours, visibly thrilled to be uneaten."
+        }
+      ]
+    },
+    {
+      "id": "ev-the-recount",
+      "eventTime": 0.65,
+      "leadTime": 0.06,
+      "severity": "critical",
+      "reactionProfile": "immediate",
+      "visionText": "The hand recount will find the machines told the truth, ballot by ballot.",
+      "headlineText": "Hand recount certifies the landslide: every blank ballot contains a small drawing of a frog. TallyRight bills double.",
+      "affectedCompanies": [
+        {
+          "companyId": "tallyright",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "causalRole": "direct",
+          "explanation": "The machines were right: the blanks weren't blank, they had little frogs drawn on them. Vindication, plus every ballot in the nation counted twice at the double recount rate the sheet disclosed."
+        },
+        {
+          "companyId": "bulwark",
+          "direction": "positive",
+          "magnitude": 0.45,
+          "causalRole": "supplier",
+          "explanation": "Certification means an incoming administration, and every incoming administration orders a custom fleet — this one amphibious. The week's quiet winner; no vision ever pointed at the coachworks."
+        }
+      ]
+    },
+    {
+      "id": "ev-likeness-decree",
+      "eventTime": 0.77,
+      "leadTime": 0.3,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "The president will sign his own face into the public domain, free to anyone.",
+      "headlineText": "Executive Order 2 places the presidential likeness in the public domain; exclusive merch deals void. Refunds: none.",
+      "affectedCompanies": [
+        {
+          "companyId": "pockets-pals",
+          "direction": "negative",
+          "magnitude": 0.55,
+          "magnitudeBand": [1, 1],
+          "causalRole": "direct",
+          "explanation": "TRAP, second half: an $80M exclusive on a face anyone may now sew for free. The round trip closed flat, minus the royalties. Exclusivity was only ever one signature deep."
+        }
+      ]
+    },
+    {
+      "id": "ev-inauguration",
+      "eventTime": 0.87,
+      "leadTime": 0.45,
+      "severity": "critical",
+      "reactionProfile": "gradual",
+      "visionText": "The swearing-in will open with one very large speaker, and the oath will be shouted over the drop.",
+      "headlineText": "DJ Spit headlines the inauguration; the oath is shouted over the drop. First address airs only on The Frog Network.",
+      "affectedCompanies": [
+        {
+          "companyId": "spit-records",
+          "direction": "positive",
+          "magnitude": 0.5,
+          "causalRole": "direct",
+          "explanation": "One very large speaker, one national stage, one deafening single back at number one. The label's catalog just became the sound of a presidency."
+        },
+        {
+          "companyId": "frog-network",
+          "direction": "positive",
+          "magnitude": 0.5,
+          "causalRole": "direct",
+          "explanation": "The equal-time suspension died with the campaign, and the first address aired only here. One program again — but the program is now the government. Round trip complete, for whoever held."
+        },
+        {
+          "companyId": "smiling-friends-inc",
+          "direction": "positive",
+          "magnitude": 0.25,
+          "causalRole": "direct",
+          "explanation": "The two men who ran the campaign walked into the administration with it; the charity now bills the state per national smile. Still one room."
+        },
+        {
+          "companyId": "gravitas",
+          "direction": "negative",
+          "magnitude": 0.2,
+          "causalRole": "expectations",
+          "explanation": "The channel of record priced itself as the voice of the new era, then watched the address air on a rival that owns a fireplace. Baxley covered it from outside, in the rain."
+        }
+      ]
+    }
+  ],
+  "debrief": {
+    "summary": "It opened as a media story — a 40-season variety-show host smashing his own desk to announce for president — and closed with the oath of office shouted over a bass drop. The network round-tripped exactly as the rulebook said it must: bought on historic ratings, gutted by the equal-time suspension its own cast line ('no other hits') made lethal, then repriced at the close when the first address aired only on the channel with the fireplace. The debate was the week's cardiac event: the moderator stood within tongue's reach, Gravitas lost its anchor on its own feed, and Goodstead learned what 'payouts biblical' means when a man is swallowed on a policy it wrote. Then the forgiveness leg, which the cast sheet had priced all along: Baxley came back up 'mostly dry,' the swallowing claim was voided by regurgitation, and The Daily Gawk — whose own description said circulation halves on forgiveness — gave back the scandal premium before the ad break. The traps closed on schedule: Frowning Friends turned a $200M attack budget into a gain for the other side, and Pockets & Pals paid $80M for an exclusive that was one signature deep — Executive Order 2 sewed the presidential face into the public domain, refunds none. Election night taught the tape humility twice: the machines that read 100% Frog on blank ballots were impounded as broken, then vindicated ballot by ballot when the blanks turned out to carry small drawings of frogs — TallyRight billed the whole nation twice at the double rate its sheet disclosed. The quiet winner was never named by any vision: Bulwark Coachworks, which simply builds a custom fleet for every incoming administration, this one amphibious. Salty's sold pizza through all of it, and the bliblies remained unbothered. Smiling Friends Inc. — two men, one intern, one room — ran the campaign, staged the apology, watched the opposition spend $200M proving their product, and finished the week billing the state per national smile. The smallest company on the board finished among its winners, which is, of course, the whole point of the firm."
+  }
+}

@@ -1,0 +1,12 @@
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Node (only used by scripts/*.mjs if you add tooling)
+node_modules/
+npm-debug.log*
+
+# Local drafts of scenarios awaiting review
+/drafts/

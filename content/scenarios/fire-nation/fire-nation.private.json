@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "3.0",
+  "id": "fire-nation",
+  "variance": { "magnitudeBand": [0.5, 1.0] },
+  "companies": [
+    { "companyId": "sozin-steelworks", "volatility": 0.016 },
+    { "companyId": "caldera-coalworks", "volatility": 0.01 },
+    { "companyId": "talon-post", "volatility": 0.012 },
+    { "companyId": "south-seas-shipping", "volatility": 0.012 },
+    { "companyId": "serpents-pass-ferries", "volatility": 0.014 },
+    { "companyId": "omashu-chute-parcel", "volatility": 0.011 },
+    { "companyId": "jasmine-dragon", "volatility": 0.012 },
+    { "companyId": "badgermole-quarries", "volatility": 0.01 },
+    { "companyId": "yu-dao-blasting-jelly", "volatility": 0.018 },
+    { "companyId": "cabbage-corp", "volatility": 0.016 },
+    { "companyId": "kyoshi-island-charters", "volatility": 0.009 },
+    { "companyId": "white-lotus-imports", "volatility": 0.008 }
+  ],
+  "marketEvents": [
+    {
+      "id": "ev-western-offensive",
+      "eventTime": 0.07,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "The invaders will open their largest land offensive in a generation; tank columns will roll east.",
+      "headlineText": "Fire Nation opens three fronts in the west; tank columns advance singing. The Fire Lord calls it 'a good start.'",
+      "affectedCompanies": [
+        {
+          "companyId": "sozin-steelworks",
+          "direction": "positive",
+          "magnitude": 0.9,
+          "causalRole": "direct",
+          "explanation": "Three fronts of tank columns are three fronts of replacement hulls. The market bought the war machine at full price — then spent the season paying for it."
+        },
+        {
+          "companyId": "caldera-coalworks",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "magnitudeBand": [1, 1],
+          "causalRole": "supplier",
+          "explanation": "Every steamship and boiler behind the offensive burns its coal. The 'safer' way to be long the war — until the war stopped."
+        }
+      ]
+    },
+    {
+      "id": "ev-southern-blockade",
+      "eventTime": 0.14,
+      "leadTime": 0.07,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "The invaders' navy will blockade the southern sea lanes; merchant ships will be boarded or turned back.",
+      "headlineText": "Fire Navy blockades the southern lanes. Boardings, seizures, forced turnarounds; sea prunes declared contraband.",
+      "affectedCompanies": [
+        {
+          "companyId": "south-seas-shipping",
+          "direction": "negative",
+          "magnitude": 0.8,
+          "causalRole": "direct",
+          "explanation": "Its whole business is the thing the blockade closed. The cast sheet said so: every route a sea lane."
+        },
+        {
+          "companyId": "talon-post",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "causalRole": "competitor",
+          "explanation": "A blockade cannot board a hawk. Scrolls that sailed yesterday flew today, at hawk rates — first leg of the season's quietest compounder."
+        }
+      ]
+    },
+    {
+      "id": "ev-refugee-crossings",
+      "eventTime": 0.21,
+      "leadTime": 0.07,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "Families burned out of the west will triple the crowds seeking passage to the walled capital.",
+      "headlineText": "Refugee arrivals at Ba Sing Se triple in four days; ferries add night crossings. The ticket queue has its own queue.",
+      "affectedCompanies": [
+        {
+          "companyId": "serpents-pass-ferries",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "causalRole": "direct",
+          "explanation": "The only paid passage into the walled capital, oversold three times over. The identity was easy; the catch came later."
+        },
+        {
+          "companyId": "cabbage-corp",
+          "direction": "positive",
+          "magnitude": 0.3,
+          "magnitudeBand": [1, 1],
+          "causalRole": "customer",
+          "explanation": "A displaced family's first purchase is the cheapest food in the square. For one glorious month, Cabbage Corp compounded."
+        }
+      ]
+    },
+    {
+      "id": "ev-jelly-scramble",
+      "eventTime": 0.28,
+      "leadTime": 0.07,
+      "severity": "major",
+      "reactionProfile": "overreaction",
+      "visionText": "Quartermasters of both armies will bid against each other for every barrel of blasting jelly on the market.",
+      "headlineText": "Blasting-jelly prices triple as both armies bid on the same barrels; the Yu Dao works add a third shift and a fence.",
+      "affectedCompanies": [
+        {
+          "companyId": "yu-dao-blasting-jelly",
+          "direction": "positive",
+          "magnitude": 0.45,
+          "magnitudeBand": [1, 1],
+          "causalRole": "direct",
+          "explanation": "TRAP, part one: the bidding war was real, but the tape priced its peak as permanent. Chasers were still holding when the Earth King answered."
+        }
+      ]
+    },
+    {
+      "id": "ev-omashu-falls",
+      "eventTime": 0.36,
+      "leadTime": 0.08,
+      "severity": "critical",
+      "reactionProfile": "immediate",
+      "visionText": "The mountain city, second stronghold of the Earth Kingdom, will open its gates without a siege.",
+      "headlineText": "Omashu surrenders without a siege; its new governor renames it New Ozai. Civilians get two days and one cart each.",
+      "affectedCompanies": [
+        {
+          "companyId": "omashu-chute-parcel",
+          "direction": "negative",
+          "magnitude": 0.85,
+          "causalRole": "direct",
+          "explanation": "One network, one city, one bad morning. The cast sheet had warned exactly this."
+        },
+        {
+          "companyId": "serpents-pass-ferries",
+          "direction": "positive",
+          "magnitude": 0.15,
+          "causalRole": "customer",
+          "explanation": "Omashu's evacuees had two days and one destination. Refugee leg two."
+        },
+        {
+          "companyId": "talon-post",
+          "direction": "positive",
+          "magnitude": 0.12,
+          "causalRole": "macro",
+          "explanation": "An occupied city's mail doesn't stop — it reroutes, by wing, at rush rates. Quiet leg two."
+        }
+      ]
+    },
+    {
+      "id": "ev-cabbage-cart",
+      "eventTime": 0.43,
+      "leadTime": 0.36,
+      "severity": "minor",
+      "reactionProfile": "immediate",
+      "visionText": "A runaway tank will roll driverless through a market square and come to rest on a famous produce cart.",
+      "headlineText": "A driverless tank rolls through Gaoling's market and stops atop Cabbage Corp's flagship cart. Proprietor: 'MY CABBAGES!'",
+      "affectedCompanies": [
+        {
+          "companyId": "cabbage-corp",
+          "direction": "negative",
+          "magnitude": 0.7,
+          "magnitudeBand": [1, 1],
+          "causalRole": "direct",
+          "explanation": "The tank found the flagship cart, as somehow it always does. Net of the refugee windfall: flat on the season. That is the joke."
+        }
+      ]
+    },
+    {
+      "id": "ev-the-drill",
+      "eventTime": 0.5,
+      "leadTime": 0.45,
+      "severity": "major",
+      "reactionProfile": "volatile",
+      "visionText": "A siege engine the size of a village will crawl toward the walled capital, and the city will bar its gates.",
+      "headlineText": "A drill two hundred paces long grinds toward the outer wall; gates sealed. Officials: 'There is no war in Ba Sing Se.'",
+      "affectedCompanies": [
+        {
+          "companyId": "jasmine-dragon",
+          "direction": "negative",
+          "magnitude": 0.4,
+          "causalRole": "macro",
+          "explanation": "Nobody queues for ginseng while a drill chews the wall. Siege panic marked down the whole upper ring."
+        },
+        {
+          "companyId": "serpents-pass-ferries",
+          "direction": "negative",
+          "magnitude": 0.35,
+          "causalRole": "sector",
+          "explanation": "Barred gates, suspended crossings, suspended revenue — the refugee trade's first lesson in what it was exposed to."
+        },
+        {
+          "companyId": "sozin-steelworks",
+          "direction": "positive",
+          "magnitude": 0.35,
+          "causalRole": "direct",
+          "explanation": "'Siege engines' had been on the cast sheet all season. The drill was Sozin's flagship build, paid for in advance of the wall it hadn't broken."
+        }
+      ]
+    },
+    {
+      "id": "ev-drill-broken",
+      "eventTime": 0.57,
+      "leadTime": 0.07,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "The great siege engine will die at the wall it has bitten into, and the capital's gates will reopen.",
+      "headlineText": "The drill bites through the outer wall, then splits open from within; a boy stands atop the wreck. Gates reopen.",
+      "affectedCompanies": [
+        {
+          "companyId": "badgermole-quarries",
+          "direction": "positive",
+          "magnitude": 0.75,
+          "causalRole": "direct",
+          "explanation": "The wall held, but took a bite doing it — and one company holds the standing repair contract. No vision ever said 'quarry.'"
+        },
+        {
+          "companyId": "jasmine-dragon",
+          "direction": "positive",
+          "magnitude": 0.45,
+          "causalRole": "macro",
+          "explanation": "Relief rally: gates open, panic over, nobles back in their seats by evening."
+        },
+        {
+          "companyId": "serpents-pass-ferries",
+          "direction": "positive",
+          "magnitude": 0.4,
+          "causalRole": "sector",
+          "explanation": "Crossings resumed into a city the continent now believes unbreakable. Leg three of four."
+        },
+        {
+          "companyId": "sozin-steelworks",
+          "direction": "negative",
+          "magnitude": 0.3,
+          "causalRole": "expectations",
+          "explanation": "Its terror weapon died in public, opened by one boy. The invincibility premium came off in an afternoon."
+        }
+      ]
+    },
+    {
+      "id": "ev-black-sun",
+      "eventTime": 0.72,
+      "leadTime": 0.14,
+      "severity": "critical",
+      "reactionProfile": "immediate",
+      "visionText": "When the moon swallows the sun, a fleet will strike the invaders' capital; no firebender will hold a flame.",
+      "headlineText": "Eclipse invasion hits the Fire Nation capital; palace holds, foundry ring burns. Firebenders report: no fire.",
+      "affectedCompanies": [
+        {
+          "companyId": "sozin-steelworks",
+          "direction": "negative",
+          "magnitude": 0.8,
+          "causalRole": "direct",
+          "explanation": "The cut the season was built on, drawn on the sheet in advance: firebender smelters, foundry ringing the capital. Eight minutes without fire and half the order book had nowhere to be forged. The obvious coal hedge failed — Caldera runs machines, far away."
+        },
+        {
+          "companyId": "talon-post",
+          "direction": "positive",
+          "magnitude": 0.2,
+          "causalRole": "macro",
+          "explanation": "Three continents paying rush rates for dispatches in the chaos. Quiet leg three, still unnamed."
+        }
+      ]
+    },
+    {
+      "id": "ev-jelly-requisition",
+      "eventTime": 0.8,
+      "leadTime": 0.36,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "The Earth King will requisition every barrel of blasting jelly in his realm at a price fixed by his generals.",
+      "headlineText": "Royal decree: all blasting jelly requisitioned at fixed prices. Yu Dao cancels the third shift, then the fence.",
+      "affectedCompanies": [
+        {
+          "companyId": "yu-dao-blasting-jelly",
+          "direction": "negative",
+          "magnitude": 0.4,
+          "magnitudeBand": [1, 1],
+          "causalRole": "direct",
+          "explanation": "TRAP, part two: requisition at a general's idea of fair. Round trip complete, net zero — the market pays for scarcity, not drama."
+        }
+      ]
+    },
+    {
+      "id": "ev-avatar-returns",
+      "eventTime": 0.88,
+      "leadTime": 0.45,
+      "severity": "critical",
+      "reactionProfile": "gradual",
+      "visionText": "The Avatar, gone a hundred years, will be proclaimed returned; truce envoys will sail for every capital.",
+      "headlineText": "Earth King proclaims the Avatar returned — the boy from the drill. Truce envoys sail; the Fire Lord will receive them.",
+      "affectedCompanies": [
+        {
+          "companyId": "sozin-steelworks",
+          "direction": "negative",
+          "magnitude": 0.35,
+          "causalRole": "macro",
+          "explanation": "Armistice talk cancels the order book's premise. Final leg of the round trip: up seventeen on the offensive, down twenty-one by the close."
+        },
+        {
+          "companyId": "caldera-coalworks",
+          "direction": "negative",
+          "magnitude": 0.25,
+          "magnitudeBand": [1, 1],
+          "causalRole": "customer",
+          "explanation": "The navy that burns its coal sailed home. Did everything right all season; flattened by peace."
+        },
+        {
+          "companyId": "south-seas-shipping",
+          "direction": "positive",
+          "magnitude": 0.25,
+          "causalRole": "macro",
+          "explanation": "Truce banners lift the blockade — the season's last relief rally, not enough to reach shore."
+        },
+        {
+          "companyId": "serpents-pass-ferries",
+          "direction": "negative",
+          "magnitude": 0.15,
+          "causalRole": "expectations",
+          "explanation": "The counter-intuitive close: peace is wonderful for everyone but a ferry priced on endless exodus."
+        },
+        {
+          "companyId": "jasmine-dragon",
+          "direction": "positive",
+          "magnitude": 0.2,
+          "causalRole": "macro",
+          "explanation": "The capital exhaled and ordered tea. A retired general does his best business in peacetime."
+        }
+      ]
+    }
+  ],
+  "debrief": {
+    "summary": "The market did the obvious thing: it bought the war machine. That was the season's most expensive idea. Sozin Steelworks rode the offensive and its own drill, then gave it all back — humiliated at the wall, burned out by an eclipse its own cast-sheet line foretold, marked down by the first whisper of peace. The money went to the toll-takers beside the war: Talon Post, named by no vision, compounded three quiet legs — a blockade its hawks flew over, an occupied city's rerouted mail, an invasion's dispatch traffic — into the cleanest win on the board, and Badgermole Quarries collected the repair commission of the century for a wall that held. The traps closed on schedule: Yu Dao's bidding war ended in requisition for a net of nothing, and Caldera Coalworks, the 'safe' way to be long the war, was flattened by the armistice that ended it. Omashu Chute & Parcel was the concentration lesson — one network, one city, one bad morning. The ferries and the tea house round-tripped the siege and came out ahead, though peace clipped the ferry's exodus premium at the close. Kyoshi Island Charters and White Lotus Imports never printed a line: neutrality and back rooms are quiet businesses. And Cabbage Corp? Up on refugee appetites, down one flagship cart, flat on the season. He will rebuild."
+  }
+}

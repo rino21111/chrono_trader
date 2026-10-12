@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "3.0",
+  "id": "week-001",
+  "title": "The Buildout",
+  "description": "AI infrastructure spending collides with power limits, closed ports and a shooting war. See the week's events before the market does.",
+  "seed": 1337,
+  "startingCash": 100000,
+  "durationSeconds": 600,
+  "companies": [
+    {
+      "companyId": "atlas-cloud",
+      "name": "Atlas Cloud",
+      "sector": "Technology",
+      "description": "The largest cloud platform: vast fleets of rented servers, and one of the world's biggest buyers of chips and grid electricity.",
+      "openingPrice": 158.0
+    },
+    {
+      "companyId": "helix-compute",
+      "name": "Helix Compute",
+      "sector": "Semiconductors",
+      "description": "Designs the AI accelerator chips every data center is fighting over; fabless, so the parts are built for it by outside contract fabs.",
+      "openingPrice": 118.0
+    },
+    {
+      "companyId": "meridian-chips",
+      "name": "Meridian Chips",
+      "sector": "Semiconductors",
+      "description": "Chipmaker a generation behind the leaders, with spare fab capacity and a catalogue of good-enough parts when first-choice supply runs out.",
+      "openingPrice": 61.0
+    },
+    {
+      "companyId": "foundry-one",
+      "name": "Foundry One",
+      "sector": "Semiconductors",
+      "description": "Contract manufacturer that fabricates other companies' chip designs; its few leading-edge lines are the ones the advanced industry queues for.",
+      "openingPrice": 76.0
+    },
+    {
+      "companyId": "broadline-devices",
+      "name": "Broadline Devices",
+      "sector": "Semiconductors",
+      "description": "Makes the high-speed network switches and custom interconnect silicon that wire data-center clusters together; ships hardware worldwide by sea.",
+      "openingPrice": 92.0
+    },
+    {
+      "companyId": "agora-social",
+      "name": "Agora Social",
+      "sector": "Media",
+      "description": "Social network funded by targeted ads; the targeting works by tracking users across other apps and sites.",
+      "openingPrice": 64.0
+    },
+    {
+      "companyId": "green-current",
+      "name": "Green Current",
+      "sector": "Energy",
+      "description": "Renewable power producer with contracted wind, solar and storage; sells firm electricity to grids, factories and data centers.",
+      "openingPrice": 34.5
+    },
+    {
+      "companyId": "titan-energy",
+      "name": "Titan Energy",
+      "sector": "Energy",
+      "description": "Integrated oil-and-gas major: pumps crude, pipes natural gas, and refines the jet fuel and diesel the transport world runs on.",
+      "openingPrice": 88.0
+    },
+    {
+      "companyId": "union-aerospace",
+      "name": "Union Aerospace",
+      "sector": "Industrials",
+      "description": "Builds commercial airliners; its long-delayed next-generation widebody is still waiting on regulator sign-off.",
+      "openingPrice": 132.0
+    },
+    {
+      "companyId": "parcelworks",
+      "name": "ParcelWorks",
+      "sector": "Transportation",
+      "description": "Expedited parcel-and-freight network moving urgent cargo by air and truck; owns cargo jets and van fleets, and not a single ship.",
+      "openingPrice": 96.0
+    },
+    {
+      "companyId": "orchard",
+      "name": "Orchard",
+      "sector": "Technology",
+      "description": "Premium phone and laptop maker; earns on devices and App Bazaar store fees rather than ads, and imports finished hardware from Asia by container ship.",
+      "openingPrice": 121.0
+    },
+    {
+      "companyId": "redline-motors",
+      "name": "Redline Motors",
+      "sector": "Automotive",
+      "description": "EV maker; the battery pack — lithium, cobalt, nickel — is the largest cost in every vehicle it builds.",
+      "openingPrice": 210.0
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-07-21",
+    "promptVersion": "handauthored-5",
+    "author": "design-fixture",
+    "reviewed": true,
+    "tags": [
+      "ai-infrastructure",
+      "energy",
+      "supply-chain",
+      "geopolitical",
+      "regulation",
+      "intro"
+    ]
+  }
+}

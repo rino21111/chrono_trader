@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chrono Trader — Variance Report</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; color: #1f2328; background: #f4f1e8; }
+    h1 { font-size: 20px; margin-bottom: 4px; }
+    h2 { font-size: 17px; margin: 28px 0 6px; border-bottom: 1px solid #d8d2c2; padding-bottom: 4px; }
+    h3 { font-size: 14px; margin: 18px 0 4px; text-transform: uppercase; letter-spacing: 0.06em; color: #6b6455; }
+    p.lede { max-width: 62em; color: #4a4639; font-size: 14px; line-height: 1.5; }
+    table { border-collapse: collapse; font-size: 13px; margin: 6px 0 4px; }
+    th, td { border: 1px solid #ddd7c7; padding: 3px 8px; text-align: right; }
+    th { background: #ebe6d8; font-weight: 600; }
+    td.k, th.k { text-align: left; }
+    td.mono, th.mono { font-family: ui-monospace, monospace; }
+    .ok { color: #237a4b; }
+    .warn { color: #9a6b1e; }
+    .fail { color: #a43c35; font-weight: 700; }
+    .muted { color: #8a8371; }
+    ul.notes { font-size: 12px; color: #6b6455; max-width: 70em; margin: 4px 0 0; padding-left: 18px; }
+    .bar { display: inline-block; height: 9px; background: #7d9a6b; vertical-align: middle; }
+    .para { font-size: 12.5px; color: #4a4639; max-width: 62em; line-height: 1.5; margin: 2px 0 8px; }
+  </style>
+</head>
+<body>
+  <h1>Variance Report</h1>
+  <p class="lede">
+    The authoring instrument for the segment model. The <strong>path table</strong> is
+    exhaustive — every week the content can produce, run through the full balance suite,
+    so a branch that breaks the envelope shows up here rather than in play. The
+    <strong>draw table</strong> is sampled, because magnitude and incidence are continuous;
+    it reports the <em>worst</em> draw, never the mean. The last column of the spread table
+    is the one that matters most: it is the answer to “is this week actually different
+    twice in a row?”
+  </p>
+  <div id="out">running…</div>
+
+  <script type="module">
+    import { validateScenario } from "../src/domain/scenario/schema.js";
+    import { resolveRun, resolvePath, enumeratePaths, segmentsForPath } from "../src/domain/scenario/resolveRun.js";
+    import { eventImpactPct } from "../src/domain/market/pricingModel.js";
+
+    const DRAWS = 500;
+    const SCENARIO_IDS = ["week-001", "fire-nation", "mormons-go-nuclear", "mr-frog-president"];
+
+    const out = document.getElementById("out");
+    out.textContent = "";
+    const contentUrl = (p) => new URL(`../content/${p}`, import.meta.url).href;
+    const fetchJson = (u) => fetch(u).then((r) => r.json());
+
+    function el(tag, attrs = {}, children = []) {
+      const n = document.createElement(tag);
+      for (const [k, v] of Object.entries(attrs)) {
+        if (k === "class") n.className = v;
+        else n.setAttribute(k, v);
+      }
+      for (const c of [].concat(children)) {
+        if (c == null) continue;
+        n.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+      }
+      return n;
+    }
+    const pct = (n, d = 1) => (n * 100).toFixed(d) + "%";
+
+    function table(headers, rows) {
+      const thead = el("thead", {}, el("tr", {}, headers.map((h, i) => el("th", { class: i === 0 ? "k" : "" }, String(h)))));
+      const tbody = el("tbody", {}, rows.map((r) =>
+        el("tr", {}, r.map((cell, i) => {
+          if (cell && cell.node) return el("td", { class: cell.class || (i === 0 ? "k" : "") }, cell.node);
+          const c = cell && typeof cell === "object" ? cell : { text: cell };
+          return el("td", { class: c.class || (i === 0 ? "k" : "") }, String(c.text ?? cell ?? ""));
+        }))
+      ));
+      return el("table", {}, [thead, tbody]);
+    }
+
+    // End-of-week move per company. Every archetype settles at exactly its
+    // authored impact, so the close is the superposition of the impacts.
+    function endMoves(pub, events) {
+      const moves = new Map(pub.companies.map((c) => [c.companyId, 0]));
+      for (const ev of events) {
+        for (const a of ev.affectedCompanies || []) {
+          if (moves.has(a.companyId)) moves.set(a.companyId, moves.get(a.companyId) + eventImpactPct(ev, a));
+        }
+      }
+      return moves;
+    }
+
+    function profile(events) {
+      const snap = (t) => Math.round(t * 1e6) / 1e6;
+      const bounds = [];
+      for (const ev of events) {
+        bounds.push([snap((ev.eventTime || 0) - (ev.leadTime || 0)), 1], [snap(ev.eventTime || 0), -1]);
+      }
+      bounds.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+      let pending = 0, peak = 0;
+      for (const [, d] of bounds) { pending += d; if (pending > peak) peak = pending; }
+
+      const byReveal = [...events].sort((a, b) => (a.eventTime - a.leadTime) - (b.eventTime - b.leadTime) || (a.id < b.id ? -1 : 1));
+      let concordant = 0, discordant = 0;
+      for (let i = 0; i < byReveal.length; i += 1) {
+        for (let j = i + 1; j < byReveal.length; j += 1) {
+          if (byReveal[j].eventTime > byReveal[i].eventTime) concordant += 1;
+          else if (byReveal[j].eventTime < byReveal[i].eventTime) discordant += 1;
+        }
+      }
+      const pairs = concordant + discordant;
+      return { peak, tau: pairs ? (concordant - discordant) / pairs : 1, finale: Math.max(...events.map((e) => e.eventTime)) };
+    }
+
+    function counts(moves) {
+      let meaningful = 0, biggest = 0, biggestId = "—";
+      for (const [id, m] of moves) {
+        const abs = Math.abs(m);
+        if (abs >= 0.03) meaningful += 1;
+        if (abs > biggest) { biggest = abs; biggestId = id; }
+      }
+      return { meaningful, biggest, biggestId };
+    }
+
+    // A decoy is a company nothing landed on. Not the same as one whose net move
+    // is zero: a designed wash stops netting to exactly zero once each side of it
+    // draws its own multiplier, and counting closes would file the week's fair
+    // trap as a decoy.
+    function decoyCount(pub, events) {
+      const touched = new Set();
+      for (const ev of events) for (const a of ev.affectedCompanies || []) touched.add(a.companyId);
+      return pub.companies.filter((c) => !touched.has(c.companyId)).length;
+    }
+
+    const flag = (bad, text, warn = false) => ({ text, class: bad ? "fail" : warn ? "warn" : "ok" });
+
+    for (const id of SCENARIO_IDS) {
+      const [pub, priv] = await Promise.all([
+        fetchJson(contentUrl(`scenarios/${id}/${id}.public.json`)),
+        fetchJson(contentUrl(`scenarios/${id}/${id}.private.json`)),
+      ]);
+      const section = el("div", {}, [el("h2", {}, `${id} — ${pub.title}`)]);
+
+      const band = (priv.variance || {}).magnitudeBand;
+      const incidences = [];
+      for (const ev of priv.marketEvents) {
+        for (const a of ev.affectedCompanies || []) {
+          if (a.incidence != null) incidences.push({ ev: ev.id, co: a.companyId, p: a.incidence, role: a.causalRole || "—" });
+        }
+      }
+      section.appendChild(el("p", { class: "para" }, [
+        `magnitude band ${band ? `[${band[0]}, ${band[1]}]` : "none (authored magnitudes stand)"} · `,
+        `${incidences.length} contingent ripple${incidences.length === 1 ? "" : "s"} · `,
+        `${(priv.threads || []).length} thread(s) · ${(priv.slots || []).length} slot(s)`,
+      ]));
+
+      // --- exhaustive: every path ---
+      const paths = enumeratePaths(priv);
+      section.appendChild(el("h3", {}, `Paths — ${paths.length} possible week${paths.length === 1 ? "" : "s"}`));
+      const pathRows = [];
+      for (const path of paths) {
+        const { events, dominant, threads } = resolvePath(priv, path);
+        const c = counts(endMoves(pub, events));
+        const p = profile(events);
+        const v = validateScenario(pub, { ...priv, slots: undefined, threads: undefined, marketEvents: events });
+        pathRows.push([
+          path.length ? path.join(" + ") : "(all spine)",
+          dominant || "—",
+          events.length,
+          flag(c.meaningful < 3, String(c.meaningful)),
+          flag(false, String(decoyCount(pub, events)), decoyCount(pub, events) < 2),
+          flag(c.biggest > 0.35, `${pct(c.biggest)} ${c.biggestId}`, c.biggest > 0.3),
+          flag(p.peak !== 3, String(p.peak), p.peak !== 3),
+          flag(false, p.tau.toFixed(2), p.tau > 0.6),
+          flag(p.finale < 0.85, p.finale.toFixed(2)),
+          v.ok ? { text: "ok", class: "ok" } : { text: v.errors.join("; "), class: "fail" },
+        ]);
+        if (Object.keys(threads).length && path.length) {
+          pathRows[pathRows.length - 1][1] = { text: `${dominant} (${Object.entries(threads).map(([t, n]) => `${t} ${n}`).join(", ")})`, class: "" };
+        }
+      }
+      section.appendChild(table(
+        ["path", "dominant thread", "events", "movers", "decoys", "biggest move", "peak board", "FIFO τ", "finale", "validator"],
+        pathRows
+      ));
+
+      // Per-path per-company closes, so an author can see at a glance whether one
+      // branch is obviously the good week.
+      if (paths.length > 1) {
+        section.appendChild(el("h3", {}, "What each week pays"));
+        const perPath = paths.map((path) => endMoves(pub, resolvePath(priv, path).events));
+        section.appendChild(table(
+          ["company", ...paths.map((p) => p.join(" + "))],
+          pub.companies.map((co) => [
+            co.name,
+            ...perPath.map((m) => {
+              const v = m.get(co.companyId);
+              return { text: Math.abs(v) < 1e-9 ? "—" : pct(v), class: Math.abs(v) < 1e-9 ? "muted" : "" };
+            }),
+          ])
+        ));
+      }
+
+      // --- sampled: the continuous knobs ---
+      const worst = { meaningful: Infinity, decoys: Infinity, biggest: 0, biggestId: "—" };
+      const spread = new Map(pub.companies.map((c) => [c.companyId, { lo: Infinity, hi: -Infinity }]));
+      const pathHits = new Map();
+      const scales = [];
+      for (let i = 0; i < DRAWS; i += 1) {
+        const run = resolveRun(priv, i * 2654435761);
+        const key = run.path.segments.length ? run.path.segments.join(" + ") : "(all spine)";
+        pathHits.set(key, (pathHits.get(key) || 0) + 1);
+        const moves = endMoves(pub, run.events);
+        const c = counts(moves);
+        worst.meaningful = Math.min(worst.meaningful, c.meaningful);
+        worst.decoys = Math.min(worst.decoys, decoyCount(pub, run.events));
+        if (c.biggest > worst.biggest) { worst.biggest = c.biggest; worst.biggestId = c.biggestId; }
+        for (const [cid, m] of moves) {
+          const s = spread.get(cid);
+          s.lo = Math.min(s.lo, m);
+          s.hi = Math.max(s.hi, m);
+        }
+        if (band && i < 60) {
+          for (const ev of run.events) {
+            for (const a of ev.affectedCompanies) {
+              const authored = (priv.marketEvents.find((e) => e.id === ev.id).affectedCompanies.find((x) => x.companyId === a.companyId) || {}).magnitude;
+              if (authored) scales.push(a.magnitude / authored);
+            }
+          }
+        }
+      }
+
+      section.appendChild(el("h3", {}, `${DRAWS} draws — the worst one`));
+      section.appendChild(table(
+        ["check", "worst draw", "bound"],
+        [
+          ["meaningful movers (>=3%)", flag(worst.meaningful < 3, String(worst.meaningful)), ">= 3"],
+          ["untouched decoys", flag(false, String(worst.decoys), worst.decoys < 2), ">= 2 (never below authored)"],
+          ["biggest move", flag(worst.biggest > 0.35, `${pct(worst.biggest)} ${worst.biggestId}`, worst.biggest > 0.3), "<= 35%"],
+        ]
+      ));
+
+      if (paths.length > 1) {
+        section.appendChild(el("h3", {}, "Path frequency"));
+        section.appendChild(table(
+          ["path", "draws", "share"],
+          [...pathHits.entries()].sort((a, b) => b[1] - a[1]).map(([k, n]) => [
+            k, n, { node: el("span", {}, [el("span", { class: "bar", style: `width:${Math.round((n / DRAWS) * 220)}px` }), ` ${pct(n / DRAWS, 0)}`]) },
+          ])
+        ));
+      }
+
+      section.appendChild(el("h3", {}, "Move spread across draws"));
+      section.appendChild(el("p", { class: "para" },
+        "The variance floor. If these bands are hairlines, the week plays the same every time and the model has bought nothing."));
+      section.appendChild(table(
+        ["company", "lowest close", "highest close", "spread"],
+        pub.companies
+          .map((co) => ({ co, s: spread.get(co.companyId) }))
+          .sort((a, b) => (b.s.hi - b.s.lo) - (a.s.hi - a.s.lo))
+          .map(({ co, s }) => [
+            co.name,
+            pct(s.lo),
+            pct(s.hi),
+            { node: el("span", {}, [el("span", { class: "bar", style: `width:${Math.round((s.hi - s.lo) * 400)}px` }), ` ${pct(s.hi - s.lo)}`]) },
+          ])
+      ));
+
+      if (scales.length) {
+        const lo = Math.min(...scales), hi = Math.max(...scales);
+        const mean = scales.reduce((a, b) => a + b, 0) / scales.length;
+        section.appendChild(el("p", { class: "para" },
+          `magnitude multiplier over ${scales.length} sampled impacts: min ${lo.toFixed(3)}, mean ${mean.toFixed(3)}, max ${hi.toFixed(3)}`));
+      }
+
+      if (incidences.length) {
+        section.appendChild(el("h3", {}, "Contingent ripples"));
+        section.appendChild(table(
+          ["event", "company", "role", "incidence"],
+          incidences.map((r) => [r.ev, r.co, r.role, r.p.toFixed(2)])
+        ));
+      }
+
+      // --- the assembled debrief, one per path ---
+      if (paths.length > 1) {
+        section.appendChild(el("h3", {}, "Assembled debrief, per week"));
+        for (const path of paths) {
+          const segs = segmentsForPath(priv, path);
+          section.appendChild(el("p", { class: "para" }, [
+            el("strong", {}, path.join(" + ") + ": "),
+            [priv.debrief.opening, ...segs.map((s) => s.debriefPara), priv.debrief.closing].filter(Boolean).join(" "),
+          ]));
+        }
+      }
+
+      // --- validator, as authored ---
+      const full = validateScenario(pub, priv);
+      section.appendChild(el("h3", {}, "Validator, as authored"));
+      section.appendChild(el("p", { class: full.ok ? "para ok" : "para fail" },
+        full.ok ? "no errors" : `${full.errors.length} error(s)`));
+      if (full.errors.length) section.appendChild(el("ul", { class: "notes" }, full.errors.map((w) => el("li", { class: "fail" }, w))));
+      if (full.warnings.length) section.appendChild(el("ul", { class: "notes" }, full.warnings.map((w) => el("li", {}, w))));
+
+      out.appendChild(section);
+    }
+
+    window.__varianceReportReady = true;
+  </script>
+</body>
+</html>

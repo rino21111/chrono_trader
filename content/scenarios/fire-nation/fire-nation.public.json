@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "3.0",
+  "id": "fire-nation",
+  "title": "The Fire Nation Attacks",
+  "description": "The hundred-year war ignites in earnest. Everyone knows to buy the war machine — the war has other ideas.",
+  "seed": 100,
+  "startingCash": 100000,
+  "durationSeconds": 600,
+  "timeline": { "kind": "months", "segments": ["Thaw", "Sowing", "Bloom", "High Sun", "Ember", "Comet"] },
+  "companies": [
+    {
+      "companyId": "sozin-steelworks",
+      "name": "Sozin Steelworks",
+      "sector": "Industrials",
+      "description": "Forges tank hulls and siege engines at one vast foundry ringing the capital; every smelter is worked by firebenders.",
+      "openingPrice": 145.0
+    },
+    {
+      "companyId": "caldera-coalworks",
+      "name": "Caldera Coalworks",
+      "sector": "Mining",
+      "description": "Mines coal in mountain seams far from the capital; fuels Fire Navy steamships and factory boilers. Machines, not benders.",
+      "openingPrice": 88.0
+    },
+    {
+      "companyId": "talon-post",
+      "name": "Talon Post",
+      "sector": "Post",
+      "description": "Trained messenger hawks carry sealed scrolls between every great city — no road or ship involved.",
+      "openingPrice": 42.0
+    },
+    {
+      "companyId": "south-seas-shipping",
+      "name": "South Seas Shipping",
+      "sector": "Shipping",
+      "description": "Water Tribe fleet freighting dried fish, whale oil and sea prunes across the southern ocean; every route a sea lane.",
+      "openingPrice": 54.0
+    },
+    {
+      "companyId": "serpents-pass-ferries",
+      "name": "Serpent's Pass Ferries",
+      "sector": "Transportation",
+      "description": "Runs the lake ferries to Ba Sing Se — the only paid passage into the walled capital.",
+      "openingPrice": 33.0
+    },
+    {
+      "companyId": "omashu-chute-parcel",
+      "name": "Omashu Chute & Parcel",
+      "sector": "Logistics",
+      "description": "Delivers mail down the earthbent stone chutes of the mountain city Omashu; the whole network sits inside its walls.",
+      "openingPrice": 76.0
+    },
+    {
+      "companyId": "jasmine-dragon",
+      "name": "Jasmine Dragon Tea Houses",
+      "sector": "Consumer",
+      "description": "Tea houses in Ba Sing Se's upper ring, run by a retired general; nobles queue daily for a table.",
+      "openingPrice": 58.0
+    },
+    {
+      "companyId": "badgermole-quarries",
+      "name": "Badgermole Quarries",
+      "sector": "Materials",
+      "description": "Earthbender-run granite quarries; holds the standing contract to maintain Ba Sing Se's outer and inner walls.",
+      "openingPrice": 67.0
+    },
+    {
+      "companyId": "yu-dao-blasting-jelly",
+      "name": "Yu Dao Blasting Jelly",
+      "sector": "Chemicals",
+      "description": "Cooks blasting jelly in a colonial river town; sold by the barrel to mining camps and the sappers of both armies.",
+      "openingPrice": 81.0
+    },
+    {
+      "companyId": "cabbage-corp",
+      "name": "Cabbage Corp",
+      "sector": "Consumer",
+      "description": "Cabbage carts in market squares across the Earth Kingdom; the proprietor rebuilds the flagship cart after every disaster.",
+      "openingPrice": 12.0
+    },
+    {
+      "companyId": "kyoshi-island-charters",
+      "name": "Kyoshi Island Charters",
+      "sector": "Leisure",
+      "description": "Pleasure junks and elephant-koi tours off Kyoshi Island, neutral in every war since its founding.",
+      "openingPrice": 46.0
+    },
+    {
+      "companyId": "white-lotus-imports",
+      "name": "White Lotus Imports",
+      "sector": "Retail",
+      "description": "Antique pai sho sets and curios, dealt through old shopkeepers' back rooms in every great city; in person, never by post.",
+      "openingPrice": 103.0
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-07-21",
+    "promptVersion": "handauthored-5",
+    "author": "claude",
+    "reviewed": false,
+    "tags": [
+      "fire-nation",
+      "hundred-year-war",
+      "war-economy",
+      "themed-universe"
+    ]
+  }
+}

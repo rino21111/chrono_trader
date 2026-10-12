@@ -1,0 +1,455 @@
+{
+  "schemaVersion": "3.0",
+  "id": "mormons-go-nuclear",
+  "variance": { "magnitudeBand": [0.5, 1.0] },
+  "companies": [
+    {
+      "companyId": "beehive-atomics",
+      "volatility": 0.02
+    },
+    {
+      "companyId": "perpetual-reserve",
+      "volatility": 0.007
+    },
+    {
+      "companyId": "promised-valley-ranches",
+      "volatility": 0.008
+    },
+    {
+      "companyId": "years-supply",
+      "volatility": 0.014
+    },
+    {
+      "companyId": "everbloom-botanicals",
+      "volatility": 0.017
+    },
+    {
+      "companyId": "bonneville-concrete",
+      "volatility": 0.01
+    },
+    {
+      "companyId": "red-mesa-milling",
+      "volatility": 0.015
+    },
+    {
+      "companyId": "intermountain-light-coal",
+      "volatility": 0.01
+    },
+    {
+      "companyId": "alpine-rack-compute",
+      "volatility": 0.014
+    },
+    {
+      "companyId": "saltair-minerals",
+      "volatility": 0.012
+    },
+    {
+      "companyId": "called-and-ready",
+      "volatility": 0.009
+    },
+    {
+      "companyId": "glory-dome",
+      "volatility": 0.016
+    }
+  ],
+  "marketEvents": [
+    {
+      "id": "ev-gigawatt-covenant",
+      "eventTime": 0.07,
+      "leadTime": 0.05,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "The desert state and its faith will unveil a fleet of factory-built reactors on the western flats.",
+      "headlineText": "Deseret unveils the Gigawatt Covenant: twelve west-desert reactors, one named for each apostle. Choirs: four.",
+      "affectedCompanies": [
+        {
+          "companyId": "beehive-atomics",
+          "direction": "positive",
+          "magnitude": 0.85,
+          "causalRole": "direct",
+          "explanation": "The week's obvious trade, and the market took it at the open: twelve reactors means one builder. Right premise — but everything that followed was the cost of chasing the announcement."
+        },
+        {
+          "companyId": "red-mesa-milling",
+          "direction": "positive",
+          "magnitude": 0.3,
+          "causalRole": "supplier",
+          "explanation": "A reactor fleet is a fuel order book, and the country has exactly one licensed mill left. It repriced the moment the word 'twelve' was read out."
+        },
+        {
+          "companyId": "alpine-rack-compute",
+          "direction": "positive",
+          "magnitude": 0.35,
+          "causalRole": "customer",
+          "explanation": "Firm power is the one thing its banked land and permits were waiting on. First leg of the demand-side trade."
+        },
+        {
+          "companyId": "saltair-minerals",
+          "direction": "positive",
+          "magnitude": 0.15,
+          "causalRole": "customer",
+          "explanation": "The basin's biggest power bill heard 'cheap atomic megawatts' and rallied on hope. The hope had four days to live."
+        },
+        {
+          "companyId": "intermountain-light-coal",
+          "direction": "negative",
+          "magnitude": 0.3,
+          "causalRole": "competitor",
+          "explanation": "Every reactor on the flats is a coal unit's retirement notice. The incumbent started the week as the short side of the story."
+        }
+      ]
+    },
+    {
+      "id": "ev-years-supply-counsel",
+      "eventTime": 0.13,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "From every pulpit on one Sunday, the faith will call for the year of reserves to be brought current.",
+      "headlineText": "Pulpit counsel: bring the year's supply current. Canneries add night shifts; powdered milk trades hand to hand.",
+      "affectedCompanies": [
+        {
+          "companyId": "years-supply",
+          "direction": "positive",
+          "magnitude": 0.45,
+          "causalRole": "direct",
+          "explanation": "When the counsel came over the pulpit, the backlog followed by Tuesday. The real, durable leg of the preparedness trade — bought calmly by players who read the culture, not the panic."
+        }
+      ]
+    },
+    {
+      "id": "ev-shield-blend",
+      "eventTime": 0.19,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "overreaction",
+      "visionText": "A claim will sweep the living-room seminars: botanical drops that shield the body from radiation.",
+      "headlineText": "Everbloom's $89 'Shield Blend' sells out in a weekend; distributors say it 'raises the body above gamma.'",
+      "affectedCompanies": [
+        {
+          "companyId": "everbloom-botanicals",
+          "direction": "positive",
+          "magnitude": 0.55,
+          "causalRole": "direct",
+          "explanation": "TRAP, part one: a downline can sell anything, including physics that does not exist. An overreacting tape priced ten thousand living-room seminars as a business model. Regulators read the same seminars."
+        }
+      ]
+    },
+    {
+      "id": "ev-lake-rescue-act",
+      "eventTime": 0.25,
+      "leadTime": 0.05,
+      "severity": "critical",
+      "reactionProfile": "immediate",
+      "visionText": "One bill will move to save the shrinking lake: no new river draws, and the brine ponds drawn down.",
+      "headlineText": "The Lake Rescue Act passes 68-2: new draws frozen, lakeside ponds face shutdown. Senior water rights are exempt.",
+      "affectedCompanies": [
+        {
+          "companyId": "saltair-minerals",
+          "direction": "negative",
+          "magnitude": 0.6,
+          "causalRole": "direct",
+          "explanation": "The bill everyone read as an anti-nuclear roadblock was aimed somewhere else entirely: the ponds. Curtailment of its evaporation fields was the week's hardest single hit — and the cast sheet had said which company lived on the lake."
+        },
+        {
+          "companyId": "beehive-atomics",
+          "direction": "negative",
+          "magnitude": 0.3,
+          "causalRole": "macro",
+          "explanation": "A water-cooled fleet with no water rights met a freeze on new water rights. The announcement premium came off while the market re-read the fine print it had skipped."
+        },
+        {
+          "companyId": "intermountain-light-coal",
+          "direction": "positive",
+          "magnitude": 0.2,
+          "causalRole": "competitor",
+          "explanation": "A stalled rival is a stay of execution. The incumbent's only good day of the week — hope of delay, nothing more."
+        },
+        {
+          "companyId": "promised-valley-ranches",
+          "direction": "positive",
+          "magnitude": 0.2,
+          "causalRole": "macro",
+          "explanation": "The freeze on new rights made old rights precious — and one company on the sheet held the basin's most senior, explicitly exempt. Nobody priced it for days."
+        }
+      ]
+    },
+    {
+      "id": "ev-siren-morning",
+      "eventTime": 0.31,
+      "leadTime": 0.25,
+      "severity": "minor",
+      "reactionProfile": "overreaction",
+      "visionText": "Every siren in the valley will sound on a clear morning, and for one hour no one will say why.",
+      "headlineText": "Sirens run 61 minutes, traced to one moth in a relay; iodine sells out and ward casserole chains fully deploy.",
+      "affectedCompanies": [
+        {
+          "companyId": "years-supply",
+          "direction": "positive",
+          "magnitude": 0.7,
+          "causalRole": "direct",
+          "explanation": "TRAP, the soft kind: an hour of sirens and a statewide iodine sellout, priced at the door as a new era. It was a moth in a relay, and forty thousand casseroles deployed to no emergency whatsoever. The counsel leg held; the panic leg washed out."
+        }
+      ]
+    },
+    {
+      "id": "ev-remedies-letter",
+      "eventTime": 0.46,
+      "leadTime": 0.4,
+      "severity": "major",
+      "reactionProfile": "immediate",
+      "visionText": "Regulators will order the botanical sellers to retract their shielding claims or lose every bottle.",
+      "headlineText": "Regulators find 'Shield Blend' is 91% canola oil; retraction ordered, 4,100 distributors suspended, full recall.",
+      "affectedCompanies": [
+        {
+          "companyId": "everbloom-botanicals",
+          "direction": "negative",
+          "magnitude": 0.75,
+          "causalRole": "direct",
+          "explanation": "TRAP, part two: the lab came back 91% canola, and the rest followed — retraction order, 4,100 suspensions, recall at company cost. The round trip closed slightly below where it began; the market pays for products, not testimony."
+        }
+      ]
+    },
+    {
+      "id": "ev-water-lease",
+      "eventTime": 0.52,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "gradual",
+      "visionText": "The atomic works will secure every drop of its cooling water without touching a living river.",
+      "headlineText": "The consortium leases Promised Valley's senior water rights for 40 years; 60,000 acres of alfalfa go fallow.",
+      "affectedCompanies": [
+        {
+          "companyId": "promised-valley-ranches",
+          "direction": "positive",
+          "magnitude": 0.9,
+          "causalRole": "direct",
+          "explanation": "The payday: forty years of water leased at rates hay could never match, from rights filed before the state existed. The week's biggest winner, and no vision ever pointed at it — just a description that said 'most senior' and a headline that said 'exempt.'"
+        },
+        {
+          "companyId": "beehive-atomics",
+          "direction": "positive",
+          "magnitude": 0.4,
+          "causalRole": "direct",
+          "explanation": "Water secured, program alive. Second leg up of the round trip, for whoever held through the freeze."
+        },
+        {
+          "companyId": "intermountain-light-coal",
+          "direction": "negative",
+          "magnitude": 0.2,
+          "causalRole": "expectations",
+          "explanation": "The delay it rallied on evaporated by signature. Back to being the incumbent in a state that had chosen its successor."
+        }
+      ]
+    },
+    {
+      "id": "ev-manifest-leak",
+      "eventTime": 0.58,
+      "leadTime": 0.06,
+      "severity": "critical",
+      "reactionProfile": "volatile",
+      "visionText": "A fuel manifest will leak from the atomic works, and its numbers will fit no reactor built for power.",
+      "headlineText": "Leaked Beehive manifest seeks enrichment '40 times any power need'; Red Mesa's ten-year order sits in the same file.",
+      "affectedCompanies": [
+        {
+          "companyId": "beehive-atomics",
+          "direction": "negative",
+          "magnitude": 0.45,
+          "causalRole": "direct",
+          "explanation": "The week's cardiac event: enrichment numbers with no civilian explanation, on the letterhead of the company selling truckable reactors. Nobody holds what might be a defendant. The answer was in the mountain, but that came later."
+        },
+        {
+          "companyId": "red-mesa-milling",
+          "direction": "positive",
+          "magnitude": 0.45,
+          "causalRole": "supplier",
+          "explanation": "The cold-eyed read, and the correct one: whatever the enrichment was for, the order beside it was real, signed, and ten years long. The mill sells to the manifest, not the motive. The mill town (pop. 88) found its name in the leak and planned the parade anyway — one float, sealed barrels, washed."
+        },
+        {
+          "companyId": "intermountain-light-coal",
+          "direction": "positive",
+          "magnitude": 0.15,
+          "causalRole": "competitor",
+          "explanation": "Leg two of the incumbent's only strategy: every rival catastrophe is a life extension. It rallied on the scandal exactly as it rallied on the water freeze — hope of delay, nothing else."
+        }
+      ]
+    },
+    {
+      "id": "ev-sword-hour",
+      "eventTime": 0.64,
+      "leadTime": 0.06,
+      "severity": "major",
+      "reactionProfile": "overreaction",
+      "visionText": "The nation's largest television pulpit will devote its prime hour to the bomb it says the desert is building.",
+      "headlineText": "Glory Dome's 'Sword in the Desert' special draws 31 million; pledges set a record before the closing hymn.",
+      "affectedCompanies": [
+        {
+          "companyId": "glory-dome",
+          "direction": "positive",
+          "magnitude": 0.6,
+          "causalRole": "direct",
+          "explanation": "TRAP, the loudest kind: 31 million viewers, record pledges, a 'Sword Watch' merch line by Friday — and a business model that needs the bomb to stay scary. An overreacting tape priced the fear as an annuity. Fear has a shelf life."
+        },
+        {
+          "companyId": "beehive-atomics",
+          "direction": "negative",
+          "magnitude": 0.25,
+          "causalRole": "macro",
+          "explanation": "You cannot mark a security to a sermon, but the market tried. Third leg down of the round trip, sold by people who two days earlier had never heard of enrichment grades."
+        },
+        {
+          "companyId": "intermountain-light-coal",
+          "direction": "positive",
+          "magnitude": 0.15,
+          "causalRole": "competitor",
+          "explanation": "Leg three: the incumbent rallied on a televangelist's say-so. By Thursday this was less a strategy than a lifestyle."
+        }
+      ]
+    },
+    {
+      "id": "ev-the-deterrent",
+      "eventTime": 0.69,
+      "leadTime": 0.05,
+      "severity": "critical",
+      "reactionProfile": "immediate",
+      "visionText": "Inspectors will find an atomic device decades old in the deepest chamber of the mountain of records.",
+      "headlineText": "Feds take custody of 'the Deterrent,' built 1962, catalogued in the record mountain's deepest vault as accession no. 1.",
+      "affectedCompanies": [
+        {
+          "companyId": "beehive-atomics",
+          "direction": "positive",
+          "magnitude": 0.35,
+          "causalRole": "macro",
+          "explanation": "The exhale: the old device surrendered, the manifest 'explained,' the program blessed. The market wrote the all-clear at full price. It had confused spring cleaning with disarmament — nobody asked why a state surrenders its deterrent, and the answer was that it had stopped needing that one."
+        },
+        {
+          "companyId": "glory-dome",
+          "direction": "negative",
+          "magnitude": 0.4,
+          "causalRole": "expectations",
+          "explanation": "The sequel problem: 'Sword in the Desert II' had nothing to point at but a custody receipt. Record pledges met record refund requests, and a warehouse of Sword Watch merchandise met nobody. The dome would spend Friday demanding royalties from history, which does not pay them."
+        }
+      ]
+    },
+    {
+      "id": "ev-the-declaration",
+      "eventTime": 0.75,
+      "leadTime": 0.06,
+      "severity": "critical",
+      "reactionProfile": "volatile",
+      "visionText": "The first reactor will reach full power at dawn, and by noon the desert state will declare itself a nation.",
+      "headlineText": "Unit One hits full power at 6:04 a.m.; at noon Deseret declares independence. The grid, it notes, is sovereign.",
+      "affectedCompanies": [
+        {
+          "companyId": "beehive-atomics",
+          "direction": "negative",
+          "magnitude": 0.3,
+          "causalRole": "macro",
+          "explanation": "Full power at dawn, a flag by lunch, and the control room sang the anthem — there was suddenly an anthem. The market sold first and asked what sanctions do to a reactor monopoly second. It would get one more chance to be wrong."
+        },
+        {
+          "companyId": "alpine-rack-compute",
+          "direction": "negative",
+          "magnitude": 0.5,
+          "causalRole": "macro",
+          "explanation": "The week's great unwind: banked land, banked permits, a decade of firm megawatts — all of it abruptly in a foreign country whose biggest customers live in the one it just left. The sheet said 'for out-of-state clouds.' On Thursday, out-of-state started meaning abroad."
+        },
+        {
+          "companyId": "intermountain-light-coal",
+          "direction": "positive",
+          "magnitude": 0.4,
+          "causalRole": "macro",
+          "explanation": "The flip nobody drew: the dying utility's out-of-state contracts became a nation's only power exports, and its interties the border crossing. Wednesday's obituary, Thursday's toll booth."
+        },
+        {
+          "companyId": "years-supply",
+          "direction": "positive",
+          "magnitude": 0.3,
+          "causalRole": "macro",
+          "explanation": "Independence buying, and none of it panic this time. The counsel had said a year; the border said now."
+        }
+      ]
+    },
+    {
+      "id": "ev-the-test",
+      "eventTime": 0.8,
+      "leadTime": 0.45,
+      "severity": "critical",
+      "reactionProfile": "immediate",
+      "visionText": "The new nation will test a device on the salt flats, and the flash will be seen from three states.",
+      "headlineText": "Deseret detonates a device on the salt flats at dawn; the flash is seen from three capitols. Yield: 'sufficient.'",
+      "affectedCompanies": [
+        {
+          "companyId": "years-supply",
+          "direction": "positive",
+          "magnitude": 0.4,
+          "causalRole": "sector",
+          "explanation": "The one the moth had trained everyone to fade. Sirens, iodine, casseroles — every earlier alarm had been a trap, so the tape hesitated on the real thing, and the shelves were bare by the time it believed. The faithful did not hesitate. The faithful had topped off in March."
+        },
+        {
+          "companyId": "beehive-atomics",
+          "direction": "positive",
+          "magnitude": 0.3,
+          "causalRole": "macro",
+          "explanation": "The morning after the flash, a reactor monopoly inside a nuclear state stopped being a sanctions casualty and started being leverage. The market repriced sovereignty at 5:13 a.m."
+        },
+        {
+          "companyId": "red-mesa-milling",
+          "direction": "positive",
+          "magnitude": 0.15,
+          "causalRole": "supplier",
+          "explanation": "The mill had always sold to the manifest, not the motive. The motive, it emerged, had a yield. The town of 88 did not cancel the parade."
+        }
+      ]
+    },
+    {
+      "id": "ev-fair-and-final",
+      "eventTime": 0.85,
+      "leadTime": 0.45,
+      "severity": "critical",
+      "reactionProfile": "gradual",
+      "visionText": "The capital and the desert will sign within days, and the atomic works will change hands in the signing.",
+      "headlineText": "The Salt Flat Accords: recognition for safeguards; Perpetual, now central bank, takes Beehive at 'full and fair.'",
+      "affectedCompanies": [
+        {
+          "companyId": "beehive-atomics",
+          "direction": "negative",
+          "magnitude": 0.4,
+          "causalRole": "direct",
+          "explanation": "Nationalized by treaty at a price certified by its own acquirer, payable in Deseret gold notes — a currency four days old. The announcement buyer's week ended the way it began: believing the announcement."
+        },
+        {
+          "companyId": "perpetual-reserve",
+          "direction": "positive",
+          "magnitude": 0.35,
+          "causalRole": "direct",
+          "explanation": "Endowment on Monday, central bank by Friday. It seeded the works, paid the mountain's storage bill since 1962, let a war scare mark its own asset down without once correcting it, and then bought the reactor fleet with money it now prints. The filing was legal. In Deseret, the faith audits itself."
+        },
+        {
+          "companyId": "alpine-rack-compute",
+          "direction": "positive",
+          "magnitude": 0.2,
+          "causalRole": "macro",
+          "explanation": "The carve-out: data centers get treaty status and the megawatts keep crossing the new border. A partial refund on Thursday's unwind — the decade deal survives, denominated in gold notes."
+        },
+        {
+          "companyId": "intermountain-light-coal",
+          "direction": "positive",
+          "magnitude": 0.15,
+          "causalRole": "macro",
+          "explanation": "The export compact ratified what Thursday guessed: the interties are the border, and the border charges. The obituary is postponed indefinitely."
+        },
+        {
+          "companyId": "years-supply",
+          "direction": "negative",
+          "magnitude": 0.15,
+          "causalRole": "expectations",
+          "explanation": "Peace broke out; the panic premium came off. The counsel leg — bought calmly on Sunday, before any of it — never gave back an inch."
+        }
+      ]
+    }
+  ],
+  "debrief": {
+    "summary": "It opened as a regional utilities story — twelve reactors named for apostles, four choirs, powdered milk trading hand to hand — and closed with a new nation testing a nuclear device on its own salt flats. In between, the market kept declaring the story over. It bought Beehive on the Covenant, sold it on a water bill, bought it back on a ranch lease, dumped it when a manifest leaked seeking enrichment forty times any power need, and exhaled when federal inspectors carried the 1962 Deterrent out of the genealogy vault — accession number one, impeccably filed — calling that the all-clear. It had confused spring cleaning with disarmament: nobody asked why a state surrenders its deterrent, and the answer was that it had stopped needing that one. At dawn Thursday, Unit One reached full power; at noon Deseret declared independence, the grid — it noted — being sovereign; at 5:12 the next morning the flats lit three state capitols, yield 'sufficient.' The Salt Flat Accords closed the week: recognition for safeguards, and Perpetual Reserve — endowment on Monday, central bank by Friday — taking Beehive at 'full and fair,' payable in gold notes four days old. It had paid the mountain's storage bill since 1962 and never once corrected the panic that marked its own asset down. The filing was legal. In Deseret, the faith audits itself. The fortunes: Year's Supply climbed all week, because the moth had taught the tape to fade sirens and the mushroom cloud punished the lesson — the faithful had topped off in March. Intermountain Light & Coal, the obvious dinosaur, finished near the top when its out-of-state contracts became a nation's only power exports and its interties the toll booth. Red Mesa sold to the manifest, not the motive; the motive had a yield; the town of 88 did not cancel the parade. Promised Valley leased the new nation its water and was never named by a vision. Alpine Rack learned that 'out-of-state clouds' can start meaning 'abroad,' then won half of it back in the treaty carve-out. Saltair took the lake bill. The traps closed on schedule: Everbloom's Shield Blend assayed at 91% canola, and Glory Dome round-tripped its own fear before the fear came true — it spent Friday demanding royalties from history, which does not pay them. Bonneville never poured, and Called & Ready kept fitting nineteen-year-olds for a homeland that changed underneath them without changing the suit. The faithful were prepared for all of it. They had been for a hundred and eighty years. Preparation, it turns out, was never a pantry. It was a program."
+  }
+}

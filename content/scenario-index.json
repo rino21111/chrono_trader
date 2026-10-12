@@ -1,0 +1,24 @@
+{
+  "scenarios": [
+    {
+      "id": "week-001",
+      "title": "The Buildout",
+      "description": "AI infrastructure expansion collides with power and supply constraints."
+    },
+    {
+      "id": "fire-nation",
+      "title": "The Fire Nation Attacks",
+      "description": "The hundred-year war ignites in earnest. Everyone knows to buy the war machine — the war has other ideas."
+    },
+    {
+      "id": "mormons-go-nuclear",
+      "title": "Mormons Go Nuclear",
+      "description": "Deseret goes atomic with a fleet of desert reactors. Ask why. The faithful are prepared — the market only thinks it is."
+    },
+    {
+      "id": "mr-frog-president",
+      "title": "Mr. Frog Becomes President",
+      "description": "The nation's most famous amphibian runs for the highest office. The scandal trades easy — the forgiveness is where the money is."
+    }
+  ]
+}
